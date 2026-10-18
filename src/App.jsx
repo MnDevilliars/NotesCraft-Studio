@@ -43,7 +43,7 @@ export default function App() {
           autoPaginate: parsed.autoPaginate !== undefined ? parsed.autoPaginate : true,
           showLines: parsed.showLines !== undefined ? parsed.showLines : false,
         };
-      } catch (e) {}
+      } catch (e) { }
     }
     return DEFAULT_STYLES;
   });
@@ -62,7 +62,7 @@ export default function App() {
           logoUrl: parsed.logoUrl || '/playstore.png',
           contactNumber: parsed.contactNumber || 'Offline Classes: 82760 13329',
         };
-      } catch (e) {}
+      } catch (e) { }
     }
     return {
       channelName: 'Ganit Kaksha - Md Noorain',
@@ -158,7 +158,7 @@ export default function App() {
     setSelectedPageIndex(-1);
   };
 
-  // Requirement 1: Export to PDF (Scale 2, html-to-image offscreen clone, zero margins)
+  // Requirement 1: Export to PDF (Compressed in KB range, crisp quality)
   const handleDownloadPDF = async () => {
     setIsExporting(true);
     setExportProgress('Starting PDF export...');
@@ -167,6 +167,7 @@ export default function App() {
         chapterPrefix: chapter.prefix,
         chapterName: chapter.name,
         preset: currentPreset,
+        pdfQuality: styles.pdfQuality || 'compact',
         onProgress: (current, total, msg) => {
           setExportProgress(`${msg} (${current}/${total})`);
         },
@@ -175,7 +176,7 @@ export default function App() {
       setTimeout(() => {
         setIsExporting(false);
         setExportProgress(null);
-      }, 600);
+      }, 1500);
     }
   };
 

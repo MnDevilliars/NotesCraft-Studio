@@ -262,7 +262,7 @@ export default function Navbar({
           className="nav-btn nav-btn-download-pdf"
           onClick={onDownloadPDF}
           disabled={isExporting}
-          title="Download all pages in one PDF matching selected preset (Scale 2x)"
+          title="Download all pages in one PDF (Compressed in KB range, crisp quality)"
         >
           <FileDown size={15} />
           <span>{isExporting ? 'Exporting...' : 'PDF'}</span>

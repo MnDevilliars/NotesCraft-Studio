@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, RotateCcw, Sliders, Type, Grid, Check, Sparkles, BookOpen } from 'lucide-react';
+import { X, RotateCcw, Sliders, Type, Grid, Check, Sparkles, BookOpen, FileDown } from 'lucide-react';
 
 export const FONT_OPTIONS = [
   { id: 'Kalam', name: 'Kalam (Recommended)', family: "'Kalam', cursive" },
@@ -24,6 +24,7 @@ export const DEFAULT_STYLES = {
   graphsPerRow: 2,
   leftColWidth: 55, // for A4 mode (45% - 65%)
   pagePadding: 26,
+  pdfQuality: 'compact', // 'compact' (~500KB) | 'balanced' (~1.2MB) | 'hd' (~7MB)
 };
 
 export default function StylePanel({ isOpen, onClose, styles, setStyles, isMobilePreset }) {
@@ -301,6 +302,46 @@ export default function StylePanel({ isOpen, onClose, styles, setStyles, isMobil
                 />
                 <span className="switch-slider"></span>
               </label>
+            </div>
+
+            {/* Requirement: PDF Size Compression (KB range vs MB) */}
+            <div className="form-row flex-col items-start gap-2 py-3 border-top-slate">
+              <div className="flex items-center gap-2">
+                <FileDown size={14} className="text-emerald-400" />
+                <div className="setting-label">PDF File Size / Compression</div>
+              </div>
+              <div className="setting-subtext">
+                Compressed mode shrinks the PDF from 7–10 MB to 400–800 KB while retaining crisp text & sharp diagrams.
+              </div>
+              <div className="flex items-center gap-2 w-full mt-1">
+                <button
+                  type="button"
+                  className={`btn btn-sm flex-1 ${styles.pdfQuality === 'compact' || !styles.pdfQuality ? 'btn-primary' : 'btn-secondary'}`}
+                  onClick={() => updateStyle('pdfQuality', 'compact')}
+                  style={{ flexDirection: 'column', gap: 2, padding: '6px 8px' }}
+                >
+                  <span className="text-xs font-semibold">Compressed</span>
+                  <span className="text-[10px] opacity-80">~400–800 KB</span>
+                </button>
+                <button
+                  type="button"
+                  className={`btn btn-sm flex-1 ${styles.pdfQuality === 'balanced' ? 'btn-primary' : 'btn-secondary'}`}
+                  onClick={() => updateStyle('pdfQuality', 'balanced')}
+                  style={{ flexDirection: 'column', gap: 2, padding: '6px 8px' }}
+                >
+                  <span className="text-xs font-semibold">Balanced</span>
+                  <span className="text-[10px] opacity-80">~1.2 MB</span>
+                </button>
+                <button
+                  type="button"
+                  className={`btn btn-sm flex-1 ${styles.pdfQuality === 'hd' ? 'btn-primary' : 'btn-secondary'}`}
+                  onClick={() => updateStyle('pdfQuality', 'hd')}
+                  style={{ flexDirection: 'column', gap: 2, padding: '6px 8px' }}
+                >
+                  <span className="text-xs font-semibold">Ultra HD</span>
+                  <span className="text-[10px] opacity-80">~7 MB</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>

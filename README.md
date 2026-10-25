@@ -54,11 +54,20 @@ Open **[http://localhost:5173/](http://localhost:5173/)** in your browser.
    - Write notes in a simple, expressive text format.
    - Live real-time parsing and preview.
 
-4. **Interactive SVG Graph Engine**:
-   - `@graph hyperbola`: Rectangular hyperbola (Isothermal curves, $P$ vs $V$).
-   - `@graph horizontal`: Lines parallel to the x-axis ($PV$ vs $P$).
-   - `@graph origin`: Lines passing through $(0,0)$ ($V$ vs $T(K)$, $P$ vs $1/V$).
-   - `@graph intercept`: Lines with negative x-intercept and positive y-intercept (Charles' Law $V$ vs $\theta^\circ\text{C}$ with $-273^\circ\text{C}$).
+4. **Interactive SVG Graph & Ray Diagram Engine**:
+   - `@graph`:
+     - `@graph hyperbola`: Rectangular hyperbola (Isothermal curves, $P$ vs $V$).
+     - `@graph horizontal`: Lines parallel to the x-axis ($PV$ vs $P$).
+     - `@graph origin`: Lines passing through $(0,0)$ ($V$ vs $T(K)$, $P$ vs $1/V$).
+     - `@graph intercept`: Lines with negative x-intercept and positive y-intercept (Charles' Law $V$ vs $\theta^\circ\text{C}$ with $-273^\circ\text{C}$).
+   - `@diagram` (Vector optics ray diagrams, 2 per row, zero-cut pagination):
+     - `concave_mirror`: Object positions (beyond C, at C, between C & F, at F, between F & P).
+     - `convex_mirror`: Object in front of mirror (virtual, erect, diminished image).
+     - `convex_lens`: Object positions (beyond 2F, at 2F, between F & 2F, at F, between F & O).
+     - `concave_lens`: Object in front of lens.
+     - `glass_slab`: Refraction showing lateral shift $d$ and parallel emergent ray.
+     - `prism`: Refraction showing angle of incidence $i$, emergence $e$, and deviation $\delta = i + e - A$.
+     - `prism_dispersion`: Dispersion of white light into VIBGYOR spectrum.
 
 5. **Madhyamik Important & Remember Cards**:
    - Highlights previous year board questions with clean, high-scoring answers.
@@ -93,6 +102,11 @@ Open **[http://localhost:5173/](http://localhost:5173/)** in your browser.
 @right
 @graph origin | V vs T(K) | T(K) | V | P = constant
 @graph hyperbola | P vs V | V | P | Isothermal curve
+
+@diagram concave_mirror_beyond_c | Concave Mirror (Beyond C) | Real, inverted, diminished between C & F
+@diagram convex_lens_between_f_2f | Convex Lens (Between F & 2F) | Real, inverted, magnified beyond 2F
+@diagram glass_slab | Refraction through Glass Slab | Lateral displacement d
+@diagram prism_dispersion | Dispersion of White Light | Spectrum: VIBGYOR
 
 @table Comparison Table
 | Header 1 | Header 2 | Header 3 |

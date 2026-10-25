@@ -100,12 +100,12 @@ async function captureFullPageSlices(pageElements, preset, onProgress, options =
 
       // Fail-Safe Protection: If content is taller than target page height,
       // auto-scale down smoothly so 100% of content, graphs, and the pinned footer fit without cutting off!
-      if (naturalHeight > targetHeight + 2) {
-        const fitScale = Math.max(0.55, (targetHeight - 6) / naturalHeight);
+      if (naturalHeight > targetHeight + 8) {
+        const fitScale = Math.max(0.65, (targetHeight - 6) / naturalHeight);
         if (innerWrapper) {
           innerWrapper.style.transform = `scale(${fitScale})`;
-          innerWrapper.style.transformOrigin = 'top center';
-          innerWrapper.style.width = '100%';
+          innerWrapper.style.transformOrigin = 'top left';
+          innerWrapper.style.width = `${100 / fitScale}%`;
         }
       }
 
@@ -242,7 +242,7 @@ export async function exportToPDF({
     }
 
     const chapterCode = getChapterCode(chapterPrefix, chapterName);
-    
+
     // Measure exact PDF size
     const pdfBlob = pdf.output('blob');
     const sizeKb = Math.round(pdfBlob.size / 1024);

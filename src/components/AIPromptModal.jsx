@@ -15,9 +15,10 @@ CONTENT RULES:
 2. Very simple English, short points (max 15 words), no heavy words. Explain with "Why?" where board marks are given.
 3. No solved numericals. Give theory, formulas, units, graphs, and key points only.
 4. Every page: 1 page = 1 or 2 topics, about 5 sections, a Madhyamik Important box (7 to 9 questions with answers taken from the PYQ), and one Remember note.
-5. Graphs: use only @graph (hyperbola, horizontal, origin, intercept). Tell me if a graph is needed that is not in this list.
-6. Write fractions inline like V/T and 1/273. Use {a/b} only inside the main formulas. Subscripts and superscripts in unicode (O₂, 10⁵).
-7. If the book has an error or you are unsure of a value, say so after the pages instead of guessing.
+5. Graphs: use only @graph (hyperbola, horizontal, origin, intercept).
+6. Ray Diagrams: use @diagram (concave_mirror, convex_mirror, convex_lens, concave_lens, glass_slab, prism, prism_dispersion).
+7. Write fractions inline like V/T and 1/273. Use {a/b} only inside the main formulas. Subscripts and superscripts in unicode (O₂, 10⁵).
+8. If the book has an error or you are unsure of a value, say so after the pages instead of guessing.
 
 FORMAT:
 @chapter Chapter N: Name   (once at the top)
@@ -33,6 +34,7 @@ FORMAT:
 @table Title
 | a | b |
 @graph kind | Title | x label | y label | caption
+@diagram type | Title | Caption
 ? Question => Answer
 @remember text
 Inline: ==highlight==, **bold**, {1/P}

@@ -154,6 +154,7 @@ export function parseNotesDSL(rawText) {
         left: [],
         right: {
           graphs: [],
+          diagrams: [],
           tables: [],
           questions: [],
           remember: null,
@@ -206,6 +207,7 @@ export function parseNotesDSL(rawText) {
         left: [],
         right: {
           graphs: [],
+          diagrams: [],
           tables: [],
           questions: [],
           remember: null,
@@ -372,6 +374,54 @@ export function parseNotesDSL(rawText) {
         yLabel,
         caption
       });
+      continue;
+    }
+
+    // 7b. Diagram tag: @diagram <type> | <Title> | <Caption> | key=value
+    if (line.startsWith('@diagram')) {
+      const rawParts = line.replace('@diagram', '').split('|').map((s) => s.trim());
+      const diagramType = (rawParts[0] || 'concave_mirror').trim();
+
+      let title = '';
+      let caption = '';
+      const overrides = {};
+
+      const textParts = [];
+      for (let p = 1; p < rawParts.length; p++) {
+        const seg = rawParts[p];
+        if (!seg) continue;
+        const eqIdx = seg.indexOf('=');
+        if (eqIdx > 0) {
+          const key = seg.slice(0, eqIdx).trim().toLowerCase();
+          const val = seg.slice(eqIdx + 1).trim();
+          if (['cathode', 'anode', 'electrolyte', 'cathode_rxn', 'anode_rxn'].includes(key)) {
+            overrides[key] = val;
+            continue;
+          }
+        }
+        textParts.push(seg);
+      }
+
+      if (textParts.length > 0) {
+        title = textParts[0];
+      }
+      if (textParts.length > 1) {
+        caption = textParts.slice(1).join(' | ');
+      }
+
+      const diagramItem = {
+        type: 'diagram',
+        diagramType,
+        title,
+        caption,
+        overrides
+      };
+
+      if (currentColumn === 'left') {
+        currentPage.left.push(diagramItem);
+      } else {
+        currentPage.right.diagrams.push(diagramItem);
+      }
       continue;
     }
 

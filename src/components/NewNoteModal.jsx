@@ -28,6 +28,7 @@ export default function NewNoteModal({ isOpen, onClose, onCreateNew, onOpenAIPro
 
 @right
 @graph origin | Graph Title | X Label | Y Label | Caption
+@diagram concave_mirror_beyond_c | Concave Mirror (Beyond C) | Real, inverted, diminished image between C & F
 
 @table Comparison Matrix
 | Column 1 | Column 2 | Column 3 |

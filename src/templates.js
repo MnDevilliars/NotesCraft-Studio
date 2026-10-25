@@ -124,6 +124,468 @@ State Charles' law in symbols => V = V₀ (1 + θ/273) | 2018
 @remember Boyle P V = k,   Charles V / T = k,   Pressure law P / T = k, Avogadro V / n = k.  Always use T in kelvin.`
   },
 
+  'physical-science-light': {
+    id: 'physical-science-light',
+    subject: 'Physical Science',
+    chapterTitle: 'Chapter 5: Light (Optics & Ray Diagrams)',
+    content: `@chapter Chapter 5: Light And It's Phenomenon
+=== PAGE ===
+@title Spherical Mirrors
+@left
+# 1. Types of Spherical Mirror
+> A ==spherical mirror== is a mirror whose reflecting surface is a ==part of a hollow sphere==.
+- **Concave mirror**: reflects from the ==inner (bent-in) surface==. Example: inner side of a steel spoon.
+- **Convex mirror**: reflects from the ==outer (bulging) surface==. Example: back of a steel spoon.
+
+# 2. Important Terms
+- **Pole (P)**: the ==middle point== of the mirror
+- **Centre of curvature (C)**: centre of the hollow sphere of which the mirror is a part
+- **Radius of curvature (r)**: radius of that sphere, r = CP
+- **Principal axis**: straight line through the pole and centre of curvature
+- **Principal focus (F)**: ==concave==: parallel rays meet here after reflection. ==Convex==: parallel rays seem to come from here.
+- **Focal length (f)**: distance between pole and principal focus
+
+@right
+# 3. Rules for Reflected Rays
+- Ray ==parallel to the principal axis== passes through F (concave) or seems to come from F (convex)
+- Ray ==through C== (or towards C) returns along the ==same path==
+- Ray hitting the ==pole== reflects at an equal angle on the other side of the axis
+- Ray through F becomes parallel to the axis (concave)
+
+@remember Concave = inner surface, converges. Convex = outer surface, diverges. Ray through C retraces its path. Ray parallel to axis goes through F.
+
+@board
+What is meant by the pole of a spherical mirror? => The middle point of the mirror | 2020
+Angle of incidence of a ray passing through the centre of curvature of a concave mirror? => 0° | 2019
+Path of a ray parallel to the principal axis after reflection by a concave mirror? => Passes through the principal focus | 2023
+Point source at centre of curvature of a concave mirror: angle of deviation? => 180° | 2020
+Reflected ray makes 45° with the normal. Angle of incidence? => 45° | 2023
+
+=== PAGE ===
+@title Radius of Curvature, Focal Length and Uses
+@left
+# 1. Relation between r and f
+= r = 2f
+= f = {r/2}
+- Radius of curvature = ==twice the focal length==
+
+# 2. 3 Marks: Prove r = 2f
+- Take a ray OA ==parallel to the principal axis== (very small mirror). It reflects through F.
+- C is the centre, so CA is the ==normal== at A
+- ∠OAC = ∠FCA = i (alternate angles)
+- By the law of reflection, ∠FAC = i
+- So ∠FAC = ∠FCA, hence FA = FC
+- The mirror is small, so FA ≈ FP. Hence FC = FP
+- CP = CF + FP = 2 FP, so ==r = 2f==
+
+@right
+# 3. Uses of Mirrors
+- **Concave**: ==dentist's mirror== (large erect image of teeth). ==Car headlight== (bulb at focus gives a parallel beam). Shaving mirror.
+- **Convex**: ==rear-view mirror== of vehicles. It gives an erect, diminished image and a ==wider field of view==.
+
+@board
+Relation between radius of curvature and focal length? => f = r/2 | 2017
+Radius of curvature of concave mirror is 20 cm. Focal length? => 10 cm | 2022
+Which mirror is used by dentists? => Concave mirror | 2019, 2022
+Which mirror is used in a car headlight? Why? => Concave. Bulb at focus gives a parallel beam | 2017, 2022
+Which mirror is used in the viewfinder of a car? => Convex mirror | 2018
+One use of convex mirror => Rear-view mirror | 2023
+Which mirror gives a virtual, diminished, erect image? => Convex mirror | 2025
+Can any mirror form a virtual image smaller than the object? => Yes, convex mirror | 2022
+Find the relation between f and r for a concave mirror. One use of concave mirror => 3 marks | 2017, 2026
+
+=== PAGE ===
+@title Images by Spherical Mirrors
+@left
+# 1. Concave Mirror
+- Image depends on the ==position of the object==
+- **Object at F**: image at infinity, highly enlarged, real and inverted
+- **Object between F and P**: image is ==behind the mirror, virtual, erect and enlarged==
+- This is why a concave mirror is used as a ==shaving or dentist's mirror==
+
+# 2. Convex Mirror
+- Only 2 cases are possible
+- Image is always ==virtual, erect and diminished==, formed behind the mirror
+- **At infinity**: point-sized image at F
+- **Between infinity and P**: diminished image between P and F
+
+@right
+@diagram concave_mirror_beyond_c | Object beyond C | Real, inverted, diminished image
+@diagram concave_mirror_between_f_p | Object between F and P | Virtual, erect, magnified image
+
+@table Concave Mirror
+| Object position | Image position | Size | Nature |
+| At infinity | At F | Point sized | Real, inverted |
+| Beyond C | Between C and F | Diminished | Real, inverted |
+| At C | At C | Same size | Real, inverted |
+| Between C and F | Beyond C | Enlarged | Real, inverted |
+| At F | At infinity | Highly enlarged | Real, inverted |
+| Between F and P | Behind mirror | Enlarged | Virtual, erect |
+
+@diagram convex_mirror | Convex Mirror | Virtual, erect, diminished image
+
+@remember Concave: real and inverted, except between F and P (virtual, erect, enlarged). Convex: always virtual, erect, diminished.
+
+@board
+Where is the image of an extended object at infinity formed by a concave mirror? One feature => At F. Real, inverted, highly diminished | 2020
+Which mirror forms a magnified virtual image? => Concave mirror, object between F and P | 2024
+
+=== PAGE ===
+@title Refractive Index
+@left
+# 1. Refractive Index
+> The ==absolute refractive index== of a medium is the ==ratio of the speed of light in vacuum to the speed of light in that medium==.
+= μ = {c/v}
+- μ is always ==greater than 1==
+- μ of glass = 1.5 means light travels 1.5 times faster in vacuum than in glass
+- μ is ==inversely proportional to speed== of light in the medium
+> ==Relative refractive index== of medium 2 with respect to medium 1 = {μ₂/μ₁}.
+- μ of air with respect to glass = {1/μ of glass with respect to air}
+
+# 2. What Does It Depend On
+- ==Nature of the two media==
+- ==Physical condition== (temperature)
+- ==Colour (wavelength)== of light
+- It does ==NOT change== with the angle of incidence
+
+@right
+# 3. What Changes in a Medium
+- ==Frequency stays the same==
+- Speed and wavelength both decrease
+= v = {c/μ}
+= λ in medium = {λ in air/μ}
+= c = ν λ
+
+# 4. Colour and μ
+- μ = A + {B/λ²}
+- ==Violet or blue has greater μ than red==
+- The medium with the ==smallest angle of refraction== has the ==greatest μ==, so the ==least speed of light==
+
+@board
+How is refractive index related to the velocity of light? => μ = c/v | 2017
+What is the refractive index of a medium? => Ratio of speed of light in vacuum to speed in the medium | 2019
+μ of glass with respect to air is 1.5. μ of air with respect to glass? => 2/3 | 2019
+Which parameter remains unchanged during refraction? => Frequency | 2025
+Between μ for red and μ for blue light, which is greater? => Blue | 2022
+Does the refractive index change if the angle of incidence increases? => No | 2024
+Speed in glass 2 × 10⁵ km s⁻¹, in water 2.25 × 10⁵ km s⁻¹. Ratio of μ of glass and water? => 9 : 8 | 2023
+Relation between relative and absolute refractive index. Factors affecting relative refractive index => See Sections 1 and 2 | 2024
+Same angle of incidence. Angles of refraction in A, B, C are 30°, 45°, 60°. Where is velocity minimum? => Medium A, as r is smallest so μ is greatest | 2026
+
+=== PAGE ===
+@title Refractive Index
+@left
+# 1. Refractive Index
+> The ==absolute refractive index== of a medium is the ==ratio of the speed of light in vacuum to the speed of light in that medium==.
+= μ = {c/v}
+- μ is always ==greater than 1==
+- μ of glass = 1.5 means light travels 1.5 times faster in vacuum than in glass
+> ==Relative refractive index== of medium 2 with respect to medium 1 = {μ₂/μ₁}.
+
+# 2. What Does It Depend On
+- ==Nature of the two media==
+- ==Physical condition== (temperature)
+- ==Colour (wavelength)== of light
+- It does ==NOT change== with the angle of incidence
+
+@right
+# 3. What Changes in a Medium
+- ==Frequency stays the same==
+- Speed and wavelength both decrease
+= v = {c/μ}
+= λ in medium = {λ in air/μ}
+= c = ν λ
+# 4. Colour and μ
+- μ = A + {B/λ²}
+- ==Violet/blue has greater μ than red==
+- Medium where angle of refraction is smallest has the greatest μ, so the ==least speed of light==
+
+@board
+How is refractive index related to the velocity of light? => μ = c/v | 2017
+What is the refractive index of a medium? => Ratio of speed of light in vacuum to speed in the medium | 2019
+Which parameter remains unchanged during refraction? => Frequency | 2025
+Between μ for red and μ for blue light, which is greater? => Blue | 2022
+Does the refractive index change if the angle of incidence increases? => No | 2024
+Relation between relative and absolute refractive index. Factors affecting relative refractive index => See Sections 1 and 2 | 2024
+Same angle of incidence. Angles of refraction in A, B, C are 30°, 45°, 60°. Where is velocity minimum? => Medium A, as r is smallest so μ is greatest | 2026
+
+=== PAGE ===
+@title Glass Slab
+@left
+# 1. Glass Slab
+> A ==glass slab== is a transparent rectangular block of glass with ==two parallel refracting faces==.
+- Entering: light bends ==towards the normal==. Leaving: it bends ==away from the normal==.
+- The emergent ray is ==parallel== to the incident ray but ==shifted sideways==. This is ==lateral displacement==.
+- Lateral displacement depends on ==thickness of slab, angle of incidence and refractive index==
+- Ray incident ==normally== does not bend and has ==zero deviation==
+
+# 2. 3 Marks: Emergent Ray is Parallel to Incident Ray
+- At face PQ: {sin i/sin r} = μ
+- The two faces are parallel, so the angle of incidence at RS = r (alternate angles)
+- At RS (glass to air): {sin r/sin i'} = {1/μ}, so sin i' = μ sin r = sin i
+- Hence i' = i, so the emergent ray is ==parallel to the incident ray==
+
+@right
+@diagram glass_slab | Glass Slab | Emergent ray parallel to incident ray, with lateral shift
+
+@remember Glass slab: emergent ray is parallel to incident ray but shifted sideways. Normal incidence gives zero deviation.
+
+@board
+Angle of deviation when a ray falls perpendicularly on a glass slab? => 0° | 2018, 2026
+Why does a ray of light not deviate on passing through a glass slab? => Normally incident ray does not bend. An oblique ray only shifts sideways | 2019
+Prove incident and emergent rays are parallel for a rectangular glass slab => 3 marks | 2025
+
+=== PAGE ===
+@title Prism and Angle of Deviation
+@left
+# 1. Prism
+> A ==prism== is a transparent refracting medium bounded by ==5 plane faces==: 2 triangular and 3 rectangular.
+- Faces where light enters and leaves are ==refracting faces==
+- Angle between the two refracting faces = ==angle of the prism (A)==
+- A prism has ==3 rectangular surfaces==
+
+# 2. 3 Marks: Show δ = i₁ + i₂ − A
+- i₁ = angle of incidence, r₁ = refraction at face 1. r₂ = incidence inside, i₂ = emergence at face 2.
+- δ = (i₁ − r₁) + (i₂ − r₂) = (i₁ + i₂) − (r₁ + r₂)
+- In the quadrilateral, two angles are 90°, so ∠PNQ = 180° − A
+- In the triangle PNQ: r₁ + r₂ = 180° − ∠PNQ = A
+= δ = i₁ + i₂ − A
+
+# 3. Deviation Depends on
+- Angle of incidence, angle of prism, refractive index of material, colour of light
+
+@right
+@diagram prism | Prism | Deviation δ = i₁ + i₂ − A
+
+# 4. Minimum Deviation
+> Deviation is ==minimum== when the ray passes ==symmetrically== through the prism: i₁ = i₂ and r₁ = r₂ = {A/2}.
+- The ray inside the prism is ==parallel to the base==
+= i = {(A + δ)/2}
+- Normal incidence on face 1: μ = {sin (A + D)/sin A}
+
+@board
+How many rectangular surfaces does a prism have? => Three | 2019
+Show that δ = i₁ + i₂ − A => 3 marks, see Section 2 | 2017
+Show that symmetric passage through an equilateral prism gives minimum deviation => Section 4. i₁ = i₂ gives the least δ | 2024
+Equilateral prism, angle of deviation 40°, ray parallel to base. Angle of incidence? => 50° | 2022
+Equilateral prism, minimum deviation 20°. Angle of incidence? => 40° | 2024
+Equilateral prism, i₁ = 30°, i₂ = 45°. Angle of deviation? => 15° | 2020
+Ray falls normally on a prism face. Relation between μ, A and D => μ = sin(A + D) / sin A | 2025
+
+=== PAGE ===
+@title Dispersion of Light
+@left
+# 1. Dispersion
+> ==Dispersion== is the ==splitting of white light into its constituent colours== on passing through a refracting medium (like a prism).
+- The band of colours is called a ==spectrum==
+- Colours: ==VIBGYOR== (violet, indigo, blue, green, yellow, orange, red)
+- **Natural example**: ==rainbow==
+
+# 2. Cause
+- Each colour has a ==different refractive index== in glass
+- So each colour bends by a different angle
+- ==Violet deviates the most== (highest μ). ==Red deviates the least== (lowest μ).
+
+# 3. Types of Light
+- **Monochromatic**: one colour only. It ==does not split== in a second prism.
+- **Polychromatic (composite)**: mixture of colours, like white light. It ==splits into a spectrum==.
+
+@right
+@diagram prism_dispersion | Dispersion by Prism | White light splits into VIBGYOR
+
+# 4. Glass Slab
+- Colours do split inside the slab
+- The faces are parallel, so the colours ==come out parallel and together as white light==
+- So no spectrum is seen
+
+@board
+Give a natural example of dispersion => Rainbow | 2017
+Name a natural spectrum => Rainbow | 2026
+Which colour deviates most in a prism? => Violet | 2017
+Which colour deviates least in refraction through a prism? => Red | 2023
+Define dispersion. How to identify monochromatic and composite light with a prism? => Composite light splits into a spectrum. Monochromatic light does not | 2024
+Define dispersion. Will white light disperse in a glass slab at 45°? => Splits inside, but emerges as white light as faces are parallel | 2020
+
+=== PAGE ===
+@title Scattering and Colour
+@left
+# 1. Scattering of Light
+> ==Scattering== is the absorption of light by air molecules and its ==re-emission in all directions==.
+- Rayleigh's law: intensity of scattered light is ==inversely proportional to the fourth power of wavelength==
+= I ∝ {1/λ⁴}
+- Short wavelength (blue) scatters ==much more== than long wavelength (red)
+- ==Red is scattered the least==
+
+# 2. Why the Sky Looks Blue
+- Sunlight passes through the atmosphere and is scattered by air molecules
+- ==Blue (short wavelength) is scattered most== in all directions
+- The scattered light reaching our eyes has ==more blue==, so the sky looks blue
+
+@right
+# 3. Colour of Objects
+- An object shows the colour it ==reflects (or transmits)==. It ==absorbs all other colours==.
+- Green leaves ==reflect green and absorb the other colours==, so they look green in sunlight
+- In red light a green leaf looks ==black==, because it absorbs red
+
+@remember Scattering is proportional to 1 / λ⁴. Blue scatters most, red least. Sky is blue because blue is scattered most.
+
+@board
+Why does the sky appear blue in the daytime? => Blue light has a short wavelength, so air molecules scatter it the most | 2018, 2025
+Light of which colour gets scattered the least? => Red | 2026
+Why do green leaves appear green in sunlight? => They reflect green light and absorb the other colours | 2022
+
+=== PAGE ===
+@title Lenses
+@left
+# 1. Types of Lens
+- **Convex (converging) lens**: ==thicker in the middle==, converges parallel rays
+- **Concave (diverging) lens**: ==thinner in the middle==, diverges parallel rays
+
+# 2. Important Terms
+- **Optical centre (O)**: the point on the principal axis through which a ray passes ==without deviation==
+- **Principal axis**: line joining the centres of curvature of the two surfaces
+- **Principal focus (F)**: ==convex==: parallel rays meet here. ==Concave==: parallel rays seem to come from here.
+- **Focal length (f)**: distance between the ==optical centre and principal focus==
+- A lens has ==two foci==, one on each side
+
+@right
+# 3. Rules for Refracted Rays
+- Ray through the ==optical centre== goes ==straight==
+- Ray ==parallel to the principal axis== passes through F (convex) or seems to come from F (concave)
+- Ray through F (convex) becomes ==parallel== to the axis
+
+@remember Convex lens converges, concave lens diverges. Ray through optical centre goes straight. Ray parallel to axis passes through F.
+
+@board
+What is the optical centre of a convex lens? => Point on the principal axis through which a ray passes without deviation | 2018
+Object at 20 cm from a convex lens gives no image on either side. Focal length? => 20 cm (object is at F) | 2019
+Draw refracted rays for rays parallel to the principal axis of a convex lens. Mark F => Rays converge at F on the other side | 2022
+Which lens is used as a magnifying glass? => Convex lens | 2025
+
+=== PAGE ===
+@title Images by Lenses and Magnification
+@left
+# 1. Concave Lens
+- For ==any position== of the object, the image is ==virtual, erect and diminished==
+- Image forms between ==F and O==, on the same side as the object
+
+# 2. Convex Lens
+- Object ==between O and F== gives a ==virtual, erect, magnified== image. This is a ==magnifying glass==.
+- Object ==between F and 2F== gives a ==real, inverted, magnified== image beyond 2F.
+
+# 3. Linear Magnification (m)
+> ==Linear magnification== is the ratio of ==image height to object height==.
+= m = {image height/object height} = {v/u}
+- m > 1: magnified. m < 1: diminished. m = 1: same size.
+- m positive: virtual and erect. m negative: real and inverted.
+
+@right
+@diagram convex_lens_between_f_2f | Between F and 2F | Real, inverted, magnified
+@diagram convex_lens_between_f_o | Between F and O | Virtual, erect, magnified
+@diagram concave_lens | Concave Lens | Virtual, erect, diminished
+
+@table Convex Lens Images
+| Object position | Image position | Nature |
+| Beyond 2F | Between F and 2F | Real, inverted, diminished |
+| At 2F | At 2F | Real, inverted, same size |
+| Between F and 2F | Beyond 2F | Real, inverted, magnified |
+| At F | At infinity | Real, inverted, highly magnified |
+| Between F and O | Same side | Virtual, erect, magnified |
+
+@board
+Object between optical centre and focus of a convex lens: nature of image? => Virtual and erect (magnified) | 2018
+Two characteristics of the image when the object is between O and F of a convex lens => Virtual, erect (and magnified) | 2023
+Where is the image formed if the object is between f and 2f of a convex lens? => Beyond 2f | 2024
+How can an erect and magnified image be formed with a convex lens? => Place the object between O and F | 2018
+Explain with a ray diagram the image formed by a concave lens => Virtual, erect, diminished image between O and F | 2025
+Convex lens gives a 10 times magnified image of a 5 cm object. Image length? => 50 cm | 2026
+
+=== PAGE ===
+@title Eye, Camera and Defects of Vision
+@left
+# 1. Camera and Human Eye
+- **Simple camera**: a convex lens forms a ==real, inverted, diminished== image on the film
+- **Human eye**: image forms on the ==retina==, real and inverted. The brain shows it erect.
+- Near point of a normal eye = ==25 cm==
+- Far point of a normal eye = ==infinity==
+
+# 2. Myopia (Short-sightedness)
+> ==Myopia== is the defect in which a person can ==see near objects clearly but not distant objects==.
+- **Causes**: ==eyeball too long==, or ==eye lens focal length too short==
+- **Remedy**: ==concave lens==
+
+# 3. Hypermetropia (Long-sightedness)
+> ==Hypermetropia== is the defect in which a person can ==see distant objects clearly but not near objects==.
+- **Causes**: ==eyeball too small==, or ==eye lens focal length too large==
+- **Remedy**: ==convex lens==
+
+@right
+@table Defects of Vision
+| Point | Myopia | Hypermetropia |
+| Cannot see | Distant objects | Near objects |
+| Lens used | Concave | Convex |
+
+@remember Myopia: cannot see far, use concave lens. Hypermetropia: cannot see near, use convex lens. Far point of a normal eye is at infinity.
+
+@board
+Two features of the image formed by a simple camera => Real and inverted (diminished) | 2020
+Where is the far point of a normal human eye? => Infinity | 2026
+Which lens rectifies myopic vision? => Concave lens | 2017
+Which defect of vision is rectified by a convex lens? => Hypermetropia (long-sightedness) | 2019
+What is long-sightedness? Which lens remedies it? => Cannot see near objects clearly. Convex lens | 2018, 2022
+What is hypermetropia? Which lens rectifies it? => See Section 3 | 2025
+Two causes of myopia. Which lens rectifies it? => See Section 2. Concave lens | 2026
+
+=== PAGE ===
+@title Electromagnetic Spectrum
+@left
+# 1. Order of Wavelength
+= γ-ray < X-ray < ultraviolet < visible < infrared < microwave < radio wave
+- Visible light: ==4000 Å to 8000 Å==
+- ==Infrared== has a greater wavelength than visible light
+- γ-ray is an ==electromagnetic wave of very short wavelength==
+
+# 2. Uses
+- **X-ray**: detecting ==bone fractures==
+- **γ-ray**: ==radiotherapy to kill cancer cells==
+- Harm of γ-ray: ==damages living cells==
+
+@right
+@remember Order of wavelength: γ < X < UV < visible < IR < microwave < radio. Infrared is longer than visible light.
+
+@board
+Which has the highest wavelength: X-ray, γ-ray, infrared, UV? => Infrared | 2019
+Which has a wavelength greater than visible light? => Infrared ray | 2022
+Write one use of X-ray => Detecting bone fractures | 2020
+Fill in: γ-ray is ______ wave of short wavelength => Electromagnetic | 2023
+One use each of X-ray and γ-ray. One harmful effect of γ-ray => X-ray: bone fracture. γ-ray: cancer treatment. Harm: damages living cells | 2023
+
+=== PAGE ===
+@title Formula Sheet for Numericals
+@left
+# 1. Mirror and Lens
+= f = {R/2}
+= m = {image height/object height} = {v/u}
+
+# 2. Refraction
+= μ = {sin i/sin r}
+= μ = {c/v}
+= {μ₁/μ₂} = {v₂/v₁}
+= λ in medium = {λ in air/μ}
+= δ = i − r (rarer to denser)
+= time = {μ d/c} (time through slab of thickness d)
+
+# 3. Prism
+= δ = i₁ + i₂ − A
+= r₁ + r₂ = A
+= i = {(A + δ)/2} (ray parallel to base)
+
+@right
+! Note: c = 3 × 10⁸ m s⁻¹. 1 Å = 10⁻¹⁰ m. Frequency does not change in a medium.
+
+@remember Convert units first (Å to m, mm to m). Frequency stays the same. Speed and wavelength change in a medium.`
+  },
+
   'life-science-ch1': {
     id: 'life-science-ch1',
     subject: 'Life Science',

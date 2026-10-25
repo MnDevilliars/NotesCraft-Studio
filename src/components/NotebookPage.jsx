@@ -1,7 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react';
 import GraphRenderer from './GraphRenderer';
+import DiagramRenderer from './DiagramRenderer';
 import { formatInlineText } from '../parser';
 import { FONT_OPTIONS } from './StylePanel';
+import { fitTitleToTwoLines } from '../utils/titleUtils';
 
 // Subheading color palette for variety
 const HEADING_COLORS = [
@@ -49,7 +51,10 @@ export default function NotebookPage({
   styles,
 }) {
   const { title, left = [], right = {} } = page;
-  const { graphs = [], tables = [], questions = [], remember, customItems = [] } = right;
+  const { graphs = [], diagrams = [], tables = [], questions = [], remember, customItems = [] } = right;
+
+  // PART 1: 2-line title fitting logic
+  const titleFit = fitTitleToTwoLines(title, preset, styles);
 
   const pageRef = useRef(null);
   const contentWrapperRef = useRef(null);
@@ -65,10 +70,10 @@ export default function NotebookPage({
       const targetHeight = preset.height;
       const actualHeight = el.scrollHeight;
 
-      if (actualHeight > targetHeight + 4) {
+      if (actualHeight > targetHeight + 8) {
         setIsOverflowing(true);
         // Automatic protective scaling: shrink smoothly so pinned footer and all content stay 100% visible
-        const ratio = Math.max(0.60, (targetHeight - 8) / actualHeight);
+        const ratio = Math.max(0.65, (targetHeight - 8) / actualHeight);
         setAutoFitScale(ratio);
       } else {
         setIsOverflowing(false);
@@ -231,6 +236,17 @@ export default function NotebookPage({
       return renderTableBlock(item, idx);
     }
 
+    if (item.type === 'diagram') {
+      return (
+        <DiagramRenderer
+          key={idx}
+          diagram={item}
+          index={idx}
+          singleDiagram={true}
+        />
+      );
+    }
+
     return (
       <div key={idx} className="plain-text-item">
         {formatInlineText(item.text)}
@@ -245,7 +261,7 @@ export default function NotebookPage({
     </div>
   );
 
-  // Render Right Column Items (graphs, tables, customItems, questions, remember)
+  // Render Right Column Items (graphs, diagrams, tables, customItems, questions, remember)
   const renderRightItems = () => (
     <div className="right-items-flow">
       {/* 1. Graphs */}
@@ -257,6 +273,20 @@ export default function NotebookPage({
               graph={g}
               index={gIdx}
               singleGraph={graphs.length === 1 || styles.graphsPerRow === 1}
+            />
+          ))}
+        </div>
+      )}
+
+      {/* 1b. Ray Diagrams */}
+      {diagrams.length > 0 && (
+        <div className={`graphs-grid graphs-cols-${styles.graphsPerRow || 2}`}>
+          {diagrams.map((d, dIdx) => (
+            <DiagramRenderer
+              key={dIdx}
+              diagram={d}
+              index={dIdx}
+              singleDiagram={diagrams.length === 1 || styles.graphsPerRow === 1}
             />
           ))}
         </div>
@@ -345,13 +375,13 @@ export default function NotebookPage({
           className="page-scale-wrapper"
           style={{
             transform: autoFitScale < 1 ? `scale(${autoFitScale})` : 'none',
-            transformOrigin: 'top center',
+            transformOrigin: 'top left',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
             flex: 1,
-            height: '100%',
-            width: '100%',
+            height: autoFitScale < 1 ? `${100 / autoFitScale}%` : '100%',
+            width: autoFitScale < 1 ? `${100 / autoFitScale}%` : '100%',
           }}
         >
           {/* Top Header on EVERY SHEET */}
@@ -363,7 +393,23 @@ export default function NotebookPage({
                 </span>
                 <span className="chapter-name">{chapter.name}</span>
               </div>
-              <h1 className="page-title">{title}</h1>
+              <h1
+                className="page-title"
+                style={{
+                  fontSize: `${titleFit.fontSize}px`,
+                  lineHeight: 1.1,
+                }}
+              >
+                {titleFit.fittedTitle}
+                {titleFit.isTooLong && (
+                  <span
+                    className="title-too-long-badge no-print"
+                    title="Title too long (needs more than 2 lines at minimum size)"
+                  >
+                    Title too long
+                  </span>
+                )}
+              </h1>
             </div>
 
             {/* Top Right Logo on EVERY SHEET - 56px, no shield shape or border */}
@@ -395,7 +441,7 @@ export default function NotebookPage({
                     {renderLeftItems()}
                   </section>
                 )}
-                {(graphs.length > 0 || tables.length > 0 || customItems.length > 0 || questions.length > 0 || remember) && (
+                {(graphs.length > 0 || diagrams.length > 0 || tables.length > 0 || customItems.length > 0 || questions.length > 0 || remember) && (
                   <section className="mobile-column-right">
                     {renderRightItems()}
                   </section>

@@ -815,7 +815,7 @@ html, body, #root {
   font-family: var(--font-heading-current, 'Kalam', cursive);
   font-size: var(--title-size, 36px);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.1;
   margin-top: 2px;
   margin-bottom: 2px;
   letter-spacing: -0.3px;
@@ -823,6 +823,29 @@ html, body, #root {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
+.title-too-long-badge {
+  display: inline-block;
+  background-color: #ef4444;
+  color: #ffffff !important;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+  vertical-align: middle;
+  line-height: 1.2;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  text-decoration: none !important;
+  letter-spacing: 0.2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .header-right {
@@ -1007,6 +1030,9 @@ html, body, #root {
   padding: 10px 14px;
   box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.08);
   margin: 8px 0;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 .must-know-title {
@@ -1029,23 +1055,24 @@ html, body, #root {
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  font-size: var(--content-size, 20px);
-  line-height: inherit;
+  font-size: max(20px, var(--content-size, 20px));
+  line-height: 1.4;
   color: #000000;
 }
 
 .must-dot {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background-color: #ea580c;
-  margin-top: 10px;
+  margin-top: 9px;
   flex-shrink: 0;
 }
 
 .must-text {
   flex: 1;
   color: #000000;
+  font-size: inherit;
 }
 
 /* Board mein aaya Box (@board) - Yellow box titled "★ Board mein aaya" */
@@ -1056,11 +1083,14 @@ html, body, #root {
   padding: 10px 14px;
   box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.08);
   margin: 8px 0;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 .board-exam-title {
   font-family: var(--font-heading-current, 'Kalam', cursive);
-  font-size: calc(var(--heading-size, 26px) + 1px);
+  font-size: max(24px, calc(var(--heading-size, 26px) + 1px));
   font-weight: 700;
   color: #854d0e;
   margin-bottom: 8px;
@@ -1078,13 +1108,13 @@ html, body, #root {
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  font-size: var(--content-size, 20px);
-  line-height: inherit;
+  font-size: max(20px, var(--content-size, 20px));
+  line-height: 1.4;
 }
 
 .board-star {
   color: #ca8a04;
-  font-size: 16px;
+  font-size: 18px;
   margin-top: 2px;
   flex-shrink: 0;
 }
@@ -1092,32 +1122,36 @@ html, body, #root {
 .board-qa-row {
   flex: 1;
   color: #000000;
+  font-size: inherit;
 }
 
 .board-q {
   color: #000000;
   font-weight: 700;
+  font-size: inherit;
 }
 
 .board-arrow {
   color: #0b2568;
   font-weight: 700;
+  font-size: inherit;
 }
 
 .board-a {
   color: #0b2568;
   font-weight: 700;
+  font-size: inherit;
 }
 
 .board-year-tag {
   display: inline-block;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   background-color: #fef08a;
   color: #713f12;
   border: 1px solid #eab308;
   border-radius: 4px;
-  padding: 1px 6px;
+  padding: 2px 7px;
   margin-left: 8px;
   vertical-align: middle;
 }
@@ -1144,16 +1178,20 @@ html, body, #root {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.hand-graph-card {
+.hand-graph-card,
+.hand-diagram-card {
   background-color: #f0f7ff;
   border: 1.5px solid #7fb3e8;
   border-radius: 10px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  page-break-inside: avoid;
+  break-inside: avoid;
 }
 
-.hand-graph-card.single-graph-card {
+.hand-graph-card.single-graph-card,
+.hand-diagram-card.single-graph-card {
   grid-column: 1 / -1;
   width: 100%;
 }
@@ -1246,10 +1284,10 @@ html, body, #root {
 .table-card-header {
   background-color: #c9e7ff;
   text-align: center;
-  padding: 5px 8px;
+  padding: 6px 10px;
   font-family: var(--font-heading-current, 'Kalam', cursive);
   font-weight: 700;
-  font-size: calc(var(--content-size, 20px) + 1px);
+  font-size: max(22px, calc(var(--content-size, 20px) + 2px));
   border-bottom: 1.5px solid #7fb3e8;
   color: #000000;
 }
@@ -1261,9 +1299,10 @@ html, body, #root {
 .hand-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: var(--content-size, 20px);
+  font-size: max(19px, calc(var(--content-size, 20px) - 1px));
   text-align: center;
   color: #000000;
+  line-height: 1.35;
 }
 
 .hand-table thead tr {
@@ -1272,16 +1311,18 @@ html, body, #root {
 
 .hand-table th {
   border: 1.5px solid #5a9bd4;
-  padding: 5px 8px;
+  padding: 6px 10px;
   font-weight: 700;
+  font-size: inherit;
   color: #000000;
 }
 
 .hand-table td {
   border: 1.5px solid #5a9bd4;
-  padding: 5px 8px;
+  padding: 6px 10px;
   background-color: #ffffff;
   color: #000000;
+  font-size: inherit;
 }
 
 /* Madhyamik Important Box */
@@ -2123,6 +2164,7 @@ input:checked + .switch-slider:before {
 
   /* Never break cards, graphs, tables or boxes across pages */
   .hand-graph-card,
+  .hand-diagram-card,
   .hand-table-card,
   .law-box,
   .board-exam-box,

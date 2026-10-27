@@ -95,35 +95,44 @@ export default function NotebookPage({
   const cleanChapterPrefix = (chapter.prefix || 'Chapter').replace(/:$/, '').trim();
 
   // Helper to render table
-  const renderTableBlock = (tbl, key) => (
-    <div key={key} className="hand-table-card">
-      {tbl.title && (
-        <div className="table-card-header">{formatInlineText(tbl.title)}</div>
-      )}
-      <div className="table-wrapper">
-        <table className="hand-table">
-          {tbl.headers && tbl.headers.length > 0 && (
-            <thead>
-              <tr>
-                {tbl.headers.map((h, hIdx) => (
-                  <th key={hIdx}>{formatInlineText(h)}</th>
-                ))}
-              </tr>
-            </thead>
-          )}
-          <tbody>
-            {tbl.rows && tbl.rows.map((row, rIdx) => (
-              <tr key={rIdx}>
-                {row.map((cell, cIdx) => (
-                  <td key={cIdx}>{formatInlineText(cell)}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+  const renderTableBlock = (tbl, key) => {
+    const colCount = Math.max(
+      tbl.headers ? tbl.headers.length : 0,
+      ...(tbl.rows ? tbl.rows.map(r => (Array.isArray(r) ? r.length : 0)) : [0]),
+      1
+    );
+    const colClass = colCount >= 4 ? 'table-many-cols col-count-4 table-card-4col' : colCount === 3 ? 'table-three-cols col-count-3 table-card-3col' : 'table-two-cols col-count-2 table-card-2col';
+
+    return (
+      <div key={key} className={`hand-table-card ${colClass}`}>
+        {tbl.title && (
+          <div className="table-card-header">{formatInlineText(tbl.title)}</div>
+        )}
+        <div className="table-wrapper">
+          <table className={`hand-table ${colClass}`}>
+            {tbl.headers && tbl.headers.length > 0 && (
+              <thead>
+                <tr>
+                  {tbl.headers.map((h, hIdx) => (
+                    <th key={hIdx}>{formatInlineText(h)}</th>
+                  ))}
+                </tr>
+              </thead>
+            )}
+            <tbody>
+              {tbl.rows && tbl.rows.map((row, rIdx) => (
+                <tr key={rIdx}>
+                  {row.map((cell, cIdx) => (
+                    <td key={cIdx}>{formatInlineText(cell)}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   // Helper to render @must block
   const renderMustBlock = (item, key) => (
@@ -382,6 +391,8 @@ export default function NotebookPage({
             flex: 1,
             height: autoFitScale < 1 ? `${100 / autoFitScale}%` : '100%',
             width: autoFitScale < 1 ? `${100 / autoFitScale}%` : '100%',
+            maxWidth: autoFitScale < 1 ? `${100 / autoFitScale}%` : '100%',
+            boxSizing: 'border-box',
           }}
         >
           {/* Top Header on EVERY SHEET */}

@@ -586,6 +586,289 @@ One use each of X-ray and γ-ray. One harmful effect of γ-ray => X-ray: bone fr
 @remember Convert units first (Å to m, mm to m). Frequency stays the same. Speed and wavelength change in a medium.`
   },
 
+  'physical-science-electricity': {
+    id: 'physical-science-electricity',
+    subject: 'Physical Science',
+    chapterTitle: 'Chapter 6: Current Electricity',
+    content: `@chapter Chapter 6: Current Electricity
+=== PAGE ===
+@title Electric Current, Potential Difference & Ohm's Law
+@left
+# 1. Electric Current (I) & Potential Difference (V)
+> Electric current is the rate of flow of electric charge across a cross-section of a conductor: ==I = Q / t==.
+- SI unit of charge = **Coulomb (C)**; SI unit of current = **Ampere (A)** (1 A = 1 C/s).
+- 1 Coulomb = charge on ==6.25 × 10¹⁸ electrons== (each e⁻ = 1.6 × 10⁻¹⁹ C).
+- Potential difference (V): work done to move unit positive charge between two points: ==V = W / Q==.
+- SI unit of potential = **Volt (V)** (1 V = 1 J / 1 C).
+
+# 2. Ohm's Law (Georg Simon Ohm)
+> At constant temperature and other physical conditions, the current flowing through a conductor is directly proportional to the potential difference across its ends: ==V ∝ I==.
+= V = I · R
+- **Resistance (R)**: opposition to current flow. SI unit = **Ohm (Ω)** (1 Ω = 1 V / 1 A).
+- Slope of V–I straight line graph = Resistance R.
+- Conductors obeying Ohm's law = **Ohmic** (metals like Cu, Al).
+- Conductors violating Ohm's law = **Non-Ohmic** (diode, LED, transistor, electrolyte).
+
+# 3. Factors Affecting Resistance
+= R = ρ · {l / A}
+- **Length (l)**: R ∝ l (doubling length doubles resistance).
+- **Cross-section area (A)**: R ∝ 1/A (thick wire has less resistance than thin wire).
+- **Resistivity (ρ)**: property of material. SI unit = **Ω·m**.
+- Temperature: Resistance of metals **increases** with temperature; semiconductors **decrease**.
+
+@right
+@diagram circuit_ohms_law | Ohm's Law Verification Circuit | Ammeter in series • Voltmeter in parallel across R
+
+? SI unit of electric potential? => Volt (V) = Joule / Coulomb
+? What device measures current in a circuit? => Ammeter (always connected in series)
+? What device measures potential difference? => Voltmeter (always connected in parallel)
+? What is the resistance of an ideal ammeter? => Zero (to avoid altering circuit current)
+? What is the resistance of an ideal voltmeter? => Infinite (draws no current)
+? If length of wire is doubled and area halved, new R? => 4 times (R' = ρ·2l/(A/2) = 4R)
+? Does resistivity depend on length or thickness? => No, depends ONLY on material and temperature
+
+@remember V = I·R, R = ρ·l/A. Ammeter is connected in series; voltmeter in parallel across resistor.
+
+=== PAGE ===
+@title Combinations of Resistors: Series and Parallel
+@left
+# 1. Resistors in Series Combination
+> Resistors connected end-to-end so that the ==same current (I)== flows through every resistor.
+- Total potential difference divides: ==V = V₁ + V₂ + V₃==.
+- From Ohm's law: I·R_s = I·R₁ + I·R₂ + I·R₃.
+= R_s = R₁ + R₂ + R₃
+- **Key Feature**: Equivalent resistance R_s is **GREATER** than the largest individual resistance.
+- Disadvantage: If one component fails, the whole circuit breaks.
+
+# 2. Resistors in Parallel Combination
+> Resistors connected across two common junction points so that the ==same potential difference (V)== exists across each.
+- Total current branches: ==I = I₁ + I₂ + I₃==.
+- From Ohm's law: V / R_p = V/R₁ + V/R₂ + V/R₃.
+= {1 / R_p} = {1 / R₁} + {1 / R₂} + {1 / R₃}
+- For two resistors in parallel: ==R_p = (R₁ · R₂) / (R₁ + R₂)==.
+- **Key Feature**: Equivalent resistance R_p is **LESS** than the smallest individual resistance.
+- Major advantage: Independent on/off switches; failure of one device does not affect others.
+
+# 3. Electric Energy and Joule's Heating Law
+> Heat produced in a resistor: ==H = I² · R · t== (Joule's law).
+- In calories: ==H = {I² · R · t / 4.18} cal== (where J = 4.18 J/cal).
+- Electric Power: ==P = V · I = I² · R = {V² / R}== (Watt).
+- Commercial unit of energy = **Board of Trade Unit (B.O.T.U. or kWh)**:
+= 1 kWh = 1000 W × 3600 s = 3.6 × 10⁶ J
+
+@right
+@diagram resistors_series | Resistors in Series | Same current I through all • V = V₁ + V₂ + V₃
+@diagram resistors_parallel | Resistors in Parallel | Same potential V across all • 1/Rp = 1/R₁ + 1/R₂ + 1/R₃
+
+? Equivalent resistance of two 6 Ω resistors in series? => R_s = 6 + 6 = 12 Ω
+? Equivalent resistance of two 6 Ω resistors in parallel? => R_p = (6 × 6)/(6 + 6) = 3 Ω
+? Why are domestic appliances connected in parallel? => Equal voltage (220V) and independent control
+? State Joule's law of electric heating => H ∝ I², H ∝ R, H ∝ t (H = I²Rt / J)
+? Convert 1 Board of Trade Unit (kWh) to Joules => 1 kWh = 3.6 × 10⁶ Joules
+? Filament of electric bulb is made of? => Tungsten (high melting point ~3422°C & high resistivity)
+? Fuse wire is an alloy of? => Lead (75%) and Tin (25%) with low melting point
+
+@remember Series: R_s = R₁ + R₂ + R₃ (current same). Parallel: 1/R_p = 1/R₁ + 1/R₂ + 1/R₃ (voltage same).
+
+=== PAGE ===
+@title Magnetic Effects of Current & Solenoid
+@left
+# 1. Oersted's Experiment (1820)
+> When electric current flows through a conductor, a magnetic field is produced around it.
+- **Ampere's Swimming Rule**: If a swimmer swims along the wire in the direction of current facing the magnetic needle, the North pole deflects towards his **Left hand**.
+
+# 2. Right-Hand Thumb Rule (Maxwell's Rule)
+> Grip the conductor with your right hand such that the **thumb points in the direction of current (I)**; then the **curled fingers point in the direction of magnetic field lines (B)**.
+- Magnetic field lines around a straight current wire are **concentric circles**.
+- Field strength: ==B ∝ I== (current) and ==B ∝ 1/r== (distance from wire).
+
+# 3. Magnetic Field of a Circular Loop & Solenoid
+- At the centre of a circular coil, magnetic field lines are **straight and perpendicular** to the coil plane.
+- **Clock Rule**: Looking at a coil face:
+  - Current clockwise → **South Pole (S)**.
+  - Current anticlockwise → **North Pole (N)**.
+- **Solenoid**: A cylindrical coil of many turns of insulated copper wire.
+- Inside a long solenoid, field lines are **parallel straight lines** (uniform magnetic field).
+- It acts exactly like a **cylindrical bar magnet**.
+= Field inside solenoid: B = μ₀ · n · I (n = turns per unit length)
+
+@right
+@diagram right_hand_thumb_rule | Right-Hand Thumb Rule | Thumb = Current (I) • Curled fingers = Field (B)
+@diagram solenoid_field | Magnetic Field of a Solenoid | Uniform parallel field inside • Acts like a bar magnet
+
+? Who discovered the magnetic effect of electric current? => Hans Christian Oersted (1820)
+? Shape of magnetic field lines around a straight wire? => Concentric circles centered on the wire
+? How to increase magnetic field inside a solenoid? => Increase current (I), increase turns (n), insert soft iron core
+? Nature of magnetic field inside a current solenoid? => Uniform and strong (parallel straight lines)
+? State the Clock Face Rule for coil polarity => Clockwise current = South pole; Anticlockwise = North pole
+? Core used in an electromagnet? => Soft iron (high permeability, low retentivity)
+
+@remember Thumb = Current, Curled fingers = Magnetic field. Solenoid acts like a cylindrical bar magnet.
+
+=== PAGE ===
+@title Motor Principle, Electromagnetic Induction & Domestic Wiring
+@left
+# 1. Fleming's Left-Hand Rule (Motor Rule)
+> Stretch Thumb, Forefinger and Middle finger of left hand mutually perpendicular:
+- **Forefinger**: Magnetic Field (B)
+- **Middle Finger**: Electric Current (I)
+- **Thumb**: Direction of Force / Motion (F)
+- Mnemonic: **F – B – I** (Father, Mother, Child).
+
+# 2. Electric Motor (DC Motor)
+> Converts **Electric Energy into Mechanical Energy**.
+- Core parts: Armature coil ABCD, Strong permanent magnet poles (N & S), **Split-ring Commutator (S₁, S₂)**, and Carbon Brushes (B₁, B₂).
+- **Function of Split-ring**: Reverses current direction in the coil every half-rotation to maintain unidirectional torque.
+
+# 3. Electromagnetic Induction (Faraday & Lenz)
+> Moving a magnet relative to a coil induces an electromotive force (EMF) and current: ==e = −N (dΦ / dt)==.
+- **Lenz's Law**: The direction of induced current always opposes the cause producing it (consequence of conservation of energy).
+- **Fleming's Right-Hand Rule (Dynamo Rule)**: Used to find direction of induced current.
+
+# 4. Domestic Circuit & 3-Pin Plug
+- Supply voltage = **220 V AC, 50 Hz**.
+- Wires: **Live (L, 220V - Brown/Red)**, **Neutral (N, 0V - Light Blue/Black)**, **Earth (E - Green/Yellow)**.
+- **Golden Rule**: Switch, Fuse, and MCB are **ALWAYS connected in the LIVE wire**.
+- 3-Pin Plug: **Earth pin is thicker and longer** (enters first for grounding protection).
+
+@right
+@diagram flemings_left_hand_rule | Fleming's Left-Hand Rule | Thumb = Force (F) • Forefinger = Field (B) • Middle = Current (I)
+@diagram domestic_circuit | Domestic AC Electric Circuit | Appliances in parallel • Switch & Fuse always in Live wire!
+
+? Principle of an electric motor? => Current-carrying coil in magnetic field experiences torque (Fleming's LHR)
+? Function of split rings in DC motor? => Commutator: reverses current every half-rotation
+? What does Fleming's Left-Hand Rule determine? => Direction of force/motion on a current-carrying wire
+? State Lenz's law => Direction of induced EMF opposes the change in flux (Conservation of energy)
+? Frequency and voltage of domestic AC supply in India? => 220 V, 50 Hz
+? In which wire should a fuse/switch be connected? => Live wire (L)
+? Why is the Earth pin made thicker and longer? => Connects first for safety; cannot enter live/neutral holes
+
+@remember Motor rule = Left Hand (FBI); Generator rule = Right Hand. Fuse & switch ALWAYS in LIVE wire.`
+  },
+
+  'physical-science-organic': {
+    id: 'physical-science-organic',
+    subject: 'Physical Science',
+    chapterTitle: 'Chapter 8.6: Organic Chemistry',
+    content: `@chapter Chapter 8.6: Organic Chemistry
+=== PAGE ===
+@title Tetravalency of Carbon, Catenation & Isomerism
+@left
+# 1. Unique Nature of Carbon
+> Organic chemistry is the chemistry of carbon compounds (excluding oxides, carbonates, and cyanides).
+- **Tetravalency**: Carbon (atomic number 6, electronic configuration 2,4) has 4 valence electrons; forms 4 covalent bonds.
+- **Tetrahedral Geometry**: Four covalent bonds directed towards vertices of a regular tetrahedron with bond angle ==109°28′ (109.5°)==.
+- **Catenation**: Remarkable ability of carbon atoms to form stable covalent bonds with other carbon atoms, creating straight, branched, or cyclic chains.
+- Wöhler's synthesis (1828): Heated inorganic ammonium cyanate to synthesize **Urea** (NH₂CONH₂), disproving "Vital Force Theory".
+
+# 2. Structural Isomerism
+> Compounds having the ==same molecular formula== but ==different structural formulas== and properties.
+- **Chain Isomerism of Butane (C₄H₁₀)**:
+  - **n-Butane**: straight chain CH₃–CH₂–CH₂–CH₃ (boiling point −0.5°C).
+  - **Isobutane (2-methylpropane)**: branched CH(CH₃)₃ (boiling point −11.7°C).
+- Branching lowers the boiling point by reducing surface area and van der Waals forces.
+- Pentane (C₅H₁₂) has 3 isomers: n-pentane, isopentane, neopentane.
+
+# 3. Hydrocarbons Classification
+- **Alkanes (Paraffins)**: Saturated, single C–C bond, general formula ==CₙH₂ₙ₊₂== (e.g. Methane CH₄, Ethane C₂H₆). Undergo substitution reactions.
+- **Alkenes (Olefins)**: Unsaturated, double C=C bond, general formula ==CₙH₂ₙ== (e.g. Ethene C₂H₄). Planar 120°.
+- **Alkynes (Acetylenes)**: Unsaturated, triple C≡C bond, general formula ==CₙH₂ₙ₋₂== (e.g. Ethyne C₂H₂). Linear 180°.
+
+@right
+@diagram carbon_tetrahedron | Tetrahedral Carbon (Methane, CH₄) | sp³ hybridization • 4 equivalent bonds at 109°28′ (109.5°)
+@diagram isomerism_butane | Chain Isomerism of Butane (C₄H₁₀) | n-Butane (b.p. −0.5°C) vs Isobutane (b.p. −11.7°C)
+
+? Who disproved the Vital Force Theory? => Friedrich Wöhler (1828) by synthesizing Urea from Ammonium Cyanate
+? What is the bond angle in a methane (CH₄) molecule? => 109°28′ (109.5°)
+? What is catenation property? => Self-linking property of carbon atoms to form long open or closed chains
+? General formula of alkanes, alkenes and alkynes? => CₙH₂ₙ₊₂ (alkane), CₙH₂ₙ (alkene), CₙH₂ₙ₋₂ (alkyne)
+? How many isomers does butane (C₄H₁₀) have? => 2 isomers: n-butane and isobutane (2-methylpropane)
+? Why does isobutane have a lower boiling point than n-butane? => Spherical branching reduces surface area
+? Simplest alkane and its geometry? => Methane (CH₄), regular tetrahedral geometry
+
+@remember Catenation + Tetravalency creates millions of carbon compounds. Butane has 2 chain isomers.
+
+=== PAGE ===
+@title Functional Groups, Ethanol & Acetic Acid
+@left
+# 1. Organic Functional Groups
+> An atom or group of atoms that largely determines the specific chemical properties of an organic compound.
+- **Alcohol (-OH)**: Suffix *-ol* (e.g. Methanol CH₃OH, Ethanol C₂H₅OH).
+- **Aldehyde (-CHO)**: Suffix *-al* (e.g. Methanal HCHO, Ethanal CH₃CHO).
+- **Ketone (>C=O)**: Suffix *-one* (e.g. Propanone CH₃COCH₃ - simplest ketone).
+- **Carboxylic Acid (-COOH)**: Suffix *-oic acid* (e.g. Ethanoic acid CH₃COOH).
+
+# 2. Ethanol (Ethyl Alcohol, C₂H₅OH)
+- Industrial prep: Fermentation of molasses with yeast (*Invertase* and *Zymase* enzymes).
+- Reaction with Sodium: Effervescence of Hydrogen gas:
+= 2C₂H₅OH + 2Na → 2C₂H₅ONa + H₂↑
+- Dehydration: heated with excess concentrated H₂SO₄ at 170°C:
+= C₂H₅OH ⎯⎯⎯⎯⎯⎯⎯⎯⎯→ CH₂=CH₂ + H₂O (Ethene)
+- Denatured alcohol: ethanol made unfit for drinking by adding 5% poisonous methanol and pyridine.
+
+# 3. Ethanoic Acid (Acetic Acid, CH₃COOH)
+- 5% to 8% aqueous solution is known as **Vinegar** (food preservative).
+- Pure anhydrous acid freezes at 16.6°C into ice-like crystals = **Glacial Acetic Acid**.
+- Litmus test: Turns blue litmus red (weak monobasic acid).
+- Reaction with NaHCO₃: brisk effervescence of CO₂:
+= CH₃COOH + NaHCO₃ → CH₃COONa + CO₂↑ + H₂O
+
+@right
+@diagram functional_groups | Key Organic Functional Groups | Alcohol (−OH) • Aldehyde (−CHO) • Ketone (>C=O) • Acid (−COOH)
+@diagram ethanol_structure | Ethanol (Ethyl Alcohol) • C₂H₅OH | Functional group: Hydroxyl (−OH) • Gives H₂ with Sodium
+@diagram ethanoic_acid_structure | Ethanoic Acid (Acetic Acid) • CH₃COOH | Functional group: Carboxyl (−COOH) • Vinegar is 5–8% solution
+
+? Functional group present in alcohols and aldehydes? => Alcohol: −OH; Aldehyde: −CHO
+? Simplest ketone and its IUPAC name? => Acetone / Propan-2-one (CH₃COCH₃)
+? What is vinegar? => 5% to 8% aqueous solution of acetic acid
+? What is glacial acetic acid? => 100% pure anhydrous acetic acid (freezes at 16.6°C)
+? Test to distinguish ethanol and ethanoic acid? => Add NaHCO₃: ethanoic acid gives brisk effervescence of CO₂
+? Gas evolved when sodium metal reacts with ethanol? => Hydrogen gas (H₂↑)
+? What is denatured spirit (methylated spirit)? => Ethanol mixed with methanol & pyridine to prevent misuse
+
+@remember Ethanol = C₂H₅OH (gives H₂ with Na). Ethanoic acid = CH₃COOH (gives CO₂ with NaHCO₃).
+
+=== PAGE ===
+@title Organic Reactions: Esterification, Addition & Lab Prep
+@left
+# 1. Esterification Reaction
+> Reaction between a carboxylic acid and an alcohol in the presence of concentrated H₂SO₄ catalyst to form a sweet-smelling **Ester**.
+= CH₃COOH + C₂H₅OH ⎯⎯⎯⎯⎯⎯⎯⎯→ CH₃COOC₂H₅ + H₂O
+- **Product**: Ethyl ethanoate (Ethyl acetate) having pleasant **fruity fragrance**.
+- Conc. H₂SO₄ acts as catalyst and **dehydrating agent** (removes water).
+
+# 2. Addition Reactions of Alkenes & Alkynes
+- **Unsaturation Test (Bromine Water Test)**:
+  - Ethene or Ethyne decolourizes red-brown bromine water in CCl₄:
+  = CH₂=CH₂ + Br₂ (Red-brown) → CH₂Br–CH₂Br (Colourless)
+  - Saturated alkanes (Ethane) **do not** decolourize bromine water in the dark.
+- **Catalytic Hydrogenation**:
+  = CH₂=CH₂ + H₂ ⎯⎯⎯⎯⎯⎯→ CH₃–CH₃ (Ethane)
+  - Industrial use: Hardening liquid vegetable oils into solid Vanaspati ghee (Ni catalyst, 200°C).
+
+# 3. Laboratory Preparations
+- **Methane (CH₄)**: Heat dry Sodium acetate with Soda lime (NaOH + CaO, 1:3):
+= CH₃COONa + NaOH ⎯⎯⎯⎯⎯⎯⎯→ CH₄↑ + Na₂CO₃
+- **Ethyne / Acetylene (C₂H₂)**: Drop water on Calcium carbide:
+= CaC₂ + 2H₂O → C₂H₂↑ + Ca(OH)₂
+- Both gases are collected over water by downward displacement.
+
+@right
+@diagram esterification_reaction | Esterification Reaction | Acid + Alcohol (conc. H₂SO₄, Δ) → Ester (fruity smell) + H₂O
+@diagram bromine_test_ethene | Bromine Water Test for Unsaturation | Ethene decolourizes Br₂ water • Ethane does not react in dark
+@diagram lab_prep_methane | Laboratory Preparation of Methane | Sodium acetate + Soda lime (CaO + NaOH) • Collected over water
+
+? What is the product of reaction between acetic acid and ethanol? => Ethyl ethanoate (ester) with fruity smell
+? What role does concentrated H₂SO₄ play in esterification? => Acid catalyst and dehydrating agent
+? Chemical test to distinguish ethane and ethene? => Bromine water test: ethene decolourizes red-brown Br₂
+? Name the catalyst used in hydrogenation of vegetable oils => Finely divided Nickel (Ni) at 200°C
+? Reagents for lab preparation of methane? => Sodium acetate (CH₃COONa) and Soda lime (NaOH + CaO)
+? Why is CaO used along with NaOH in soda lime? => Prevents NaOH from absorbing moisture and attack on glass
+? How is acetylene gas prepared in the laboratory? => Action of cold water on calcium carbide (CaC₂ + 2H₂O)
+
+@remember Esterification yields fruity-smelling ester. Br₂ water tests for double/triple bonds. Soda lime prepares CH₄.`
+  },
+
   'life-science-ch1': {
     id: 'life-science-ch1',
     subject: 'Life Science',

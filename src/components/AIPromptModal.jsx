@@ -16,7 +16,11 @@ CONTENT RULES:
 3. No solved numericals. Give theory, formulas, units, graphs, and key points only.
 4. Every page: 1 page = 1 or 2 topics, about 5 sections, a Madhyamik Important box (7 to 9 questions with answers taken from the PYQ), and one Remember note.
 5. Graphs: use only @graph (hyperbola, horizontal, origin, intercept).
-6. Ray Diagrams: use @diagram (concave_mirror, convex_mirror, convex_lens, concave_lens, glass_slab, prism, prism_dispersion).
+6. Diagrams: use @diagram with type:
+   - Optics: concave_mirror_beyond_c, convex_mirror, convex_lens, concave_lens, glass_slab, prism, prism_dispersion
+   - Current Electricity: circuit_ohms_law, resistors_series, resistors_parallel, right_hand_thumb_rule, circular_loop_field, solenoid_field, flemings_left_hand_rule, electric_motor, electromagnetic_induction, domestic_circuit, three_pin_plug
+   - Organic Chemistry: carbon_tetrahedron, isomerism_butane, functional_groups, ethanol_structure, ethanoic_acid_structure, ethanal_structure, propanone_structure, hydrocarbon_types, esterification_reaction, bromine_test_ethene, lab_prep_methane, lab_prep_acetylene, ethene_hydrogenation
+   - Chemical Bonding & Electrolysis: ionic_NaCl, ionic_CaO, covalent_H2O_dot, covalent_CH4_dash, electrolysis_water, plating_silver, copper_refining
 7. Write fractions inline like V/T and 1/273. Use {a/b} only inside the main formulas. Subscripts and superscripts in unicode (O₂, 10⁵).
 8. If the book has an error or you are unsure of a value, say so after the pages instead of guessing.
 

@@ -106,6 +106,8 @@ async function captureFullPageSlices(pageElements, preset, onProgress, options =
           innerWrapper.style.transform = `scale(${fitScale})`;
           innerWrapper.style.transformOrigin = 'top left';
           innerWrapper.style.width = `${100 / fitScale}%`;
+          innerWrapper.style.maxWidth = `${100 / fitScale}%`;
+          innerWrapper.style.boxSizing = 'border-box';
         }
       }
 

@@ -870,6 +870,9 @@ html, body, #root {
   flex-direction: column;
   padding-top: 14px;
   padding-bottom: 10px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Mobile Single Column Layout */
@@ -878,6 +881,9 @@ html, body, #root {
   flex-direction: column;
   gap: 16px;
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .mobile-column-left,
@@ -886,6 +892,9 @@ html, body, #root {
   flex-direction: column;
   gap: 12px;
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .left-items-flow,
@@ -894,6 +903,9 @@ html, body, #root {
   flex-direction: column;
   gap: 10px;
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* A4 Two Columns Layout */
@@ -901,17 +913,26 @@ html, body, #root {
   display: flex;
   flex: 1;
   gap: 16px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .column {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .column-right {
   border-left: 2px solid #8fb3db;
   padding-left: 14px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Section Headings */
@@ -1279,6 +1300,9 @@ html, body, #root {
   border-radius: 10px;
   overflow: hidden;
   margin: 6px 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .table-card-header {
@@ -1287,22 +1311,31 @@ html, body, #root {
   padding: 6px 10px;
   font-family: var(--font-heading-current, 'Kalam', cursive);
   font-weight: 700;
-  font-size: max(22px, calc(var(--content-size, 20px) + 2px));
+  font-size: max(20px, calc(var(--content-size, 20px) + 2px));
   border-bottom: 1.5px solid #7fb3e8;
   color: #000000;
+  box-sizing: border-box;
+  word-break: break-word;
 }
 
 .table-wrapper {
   padding: 6px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: auto;
 }
 
 .hand-table {
   width: 100%;
+  max-width: 100%;
   border-collapse: collapse;
-  font-size: max(19px, calc(var(--content-size, 20px) - 1px));
+  font-size: max(17px, calc(var(--content-size, 20px) - 2px));
   text-align: center;
   color: #000000;
   line-height: 1.35;
+  table-layout: auto;
+  box-sizing: border-box;
 }
 
 .hand-table thead tr {
@@ -1311,18 +1344,65 @@ html, body, #root {
 
 .hand-table th {
   border: 1.5px solid #5a9bd4;
-  padding: 6px 10px;
+  padding: 6px 8px;
   font-weight: 700;
   font-size: inherit;
   color: #000000;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
+  vertical-align: middle;
+  box-sizing: border-box;
 }
 
 .hand-table td {
   border: 1.5px solid #5a9bd4;
-  padding: 6px 10px;
+  padding: 6px 8px;
   background-color: #ffffff;
   color: #000000;
   font-size: inherit;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+/* 3-column table responsive styling so text wraps nicely and never overflows cards */
+.hand-table.table-three-cols,
+.hand-table.col-count-3,
+.table-card-3col .hand-table {
+  font-size: max(15px, calc(var(--content-size, 20px) - 3px));
+}
+
+.hand-table.table-three-cols th,
+.hand-table.table-three-cols td,
+.hand-table.col-count-3 th,
+.hand-table.col-count-3 td,
+.table-card-3col .hand-table th,
+.table-card-3col .hand-table td {
+  padding: 5px 6px;
+}
+
+/* 4+ column table styling */
+.hand-table.table-many-cols,
+.hand-table.col-count-4,
+.hand-table.col-count-5,
+.table-card-4col .hand-table {
+  font-size: max(13px, calc(var(--content-size, 20px) - 5px));
+}
+
+.hand-table.table-many-cols th,
+.hand-table.table-many-cols td,
+.hand-table.col-count-4 th,
+.hand-table.col-count-4 td,
+.hand-table.col-count-5 th,
+.hand-table.col-count-5 td,
+.table-card-4col .hand-table th,
+.table-card-4col .hand-table td {
+  padding: 4px 4px;
 }
 
 /* Madhyamik Important Box */

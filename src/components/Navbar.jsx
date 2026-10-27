@@ -119,6 +119,8 @@ export default function Navbar({
           >
             <option value="physical-science-ch2">Physical Science: Ch 2 Behaviour of Gases</option>
             <option value="physical-science-light">Physical Science: Ch 5 Light (Ray Diagrams)</option>
+            <option value="physical-science-electricity">Physical Science: Ch 6 Current Electricity</option>
+            <option value="physical-science-organic">Physical Science: Ch 8.6 Organic Chemistry</option>
             <option value="life-science-ch1">Life Science: Ch 1 Control & Coordination</option>
             <option value="history-ch2">History: Ch 2 Reform - Observations</option>
             <option value="geography-ch1">Geography: Ch 1 Exogenetic Landforms</option>

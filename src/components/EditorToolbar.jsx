@@ -471,6 +471,184 @@ export const DIAGRAM_SNIPPETS = [
         snippet: '\n@diagram copper_refining | Electro-refining of Copper | Anode: Impure Cu | Cathode: Pure Cu\n'
       }
     ]
+  },
+  {
+    category: 'Current Electricity',
+    items: [
+      {
+        label: "Ohm's Law Circuit",
+        type: 'circuit_ohms_law',
+        title: "Ohm's Law Verification Circuit",
+        caption: 'Ammeter in series • Voltmeter in parallel across R',
+        snippet: "\n@diagram circuit_ohms_law | Ohm's Law Verification Circuit | Ammeter in series • Voltmeter in parallel across R\n"
+      },
+      {
+        label: 'Resistors in Series',
+        type: 'resistors_series',
+        title: 'Resistors in Series (R₁ + R₂ + R₃)',
+        caption: 'Same current I through all • V = V₁ + V₂ + V₃',
+        snippet: '\n@diagram resistors_series | Resistors in Series (R₁ + R₂ + R₃) | Same current I through all • V = V₁ + V₂ + V₃\n'
+      },
+      {
+        label: 'Resistors in Parallel',
+        type: 'resistors_parallel',
+        title: 'Resistors in Parallel (1/Rp = 1/R₁ + 1/R₂ + 1/R₃)',
+        caption: 'Same potential V across all • I = I₁ + I₂ + I₃',
+        snippet: '\n@diagram resistors_parallel | Resistors in Parallel (1/R_p = 1/R₁ + 1/R₂ + 1/R₃) | Same potential V across all • I = I₁ + I₂ + I₃\n'
+      },
+      {
+        label: 'Right-Hand Thumb Rule',
+        type: 'right_hand_thumb_rule',
+        title: 'Right-Hand Thumb Rule',
+        caption: 'Thumb = Current (I) • Curled fingers = Field (B)',
+        snippet: '\n@diagram right_hand_thumb_rule | Right-Hand Thumb Rule | Thumb = Current (I) • Curled fingers = Field (B)\n'
+      },
+      {
+        label: 'Circular Loop Field',
+        type: 'circular_loop_field',
+        title: 'Magnetic Field of a Circular Coil',
+        caption: 'Straight at centre • Clockwise = S, Anticlockwise = N',
+        snippet: '\n@diagram circular_loop_field | Magnetic Field of a Circular Coil | Straight at centre • Clockwise = S, Anticlockwise = N\n'
+      },
+      {
+        label: 'Magnetic Field of Solenoid',
+        type: 'solenoid_field',
+        title: 'Magnetic Field of a Solenoid',
+        caption: 'Uniform parallel field inside • Acts like a bar magnet',
+        snippet: '\n@diagram solenoid_field | Magnetic Field of a Solenoid | Uniform parallel field inside • Acts like a bar magnet\n'
+      },
+      {
+        label: "Fleming's Left-Hand Rule",
+        type: 'flemings_left_hand_rule',
+        title: "Fleming's Left-Hand Rule (Motor Rule)",
+        caption: 'Thumb = Force (F) • Forefinger = Field (B) • Middle = Current (I)',
+        snippet: "\n@diagram flemings_left_hand_rule | Fleming's Left-Hand Rule (Motor Rule) | Thumb = Force (F) • Forefinger = Field (B) • Middle = Current (I)\n"
+      },
+      {
+        label: 'Electric Motor (DC Motor)',
+        type: 'electric_motor',
+        title: 'Electric Motor (DC Motor Principle)',
+        caption: 'Split-ring commutator reverses current every half rotation',
+        snippet: '\n@diagram electric_motor | Electric Motor (DC Motor Principle) | Split-ring commutator reverses current every half rotation\n'
+      },
+      {
+        label: 'Electromagnetic Induction',
+        type: 'electromagnetic_induction',
+        title: 'Electromagnetic Induction (Faraday)',
+        caption: 'Relative motion induces EMF • Deflection in Galvanometer',
+        snippet: '\n@diagram electromagnetic_induction | Electromagnetic Induction (Faraday) | Relative motion induces EMF • Deflection in Galvanometer\n'
+      },
+      {
+        label: 'Domestic Circuit Wiring',
+        type: 'domestic_circuit',
+        title: 'Domestic AC Electric Circuit',
+        caption: 'Appliances in parallel • Switch & Fuse always in Live wire!',
+        snippet: '\n@diagram domestic_circuit | Domestic AC Electric Circuit | Appliances in parallel • Switch & Fuse always in Live wire!\n'
+      },
+      {
+        label: '3-Pin Plug and Socket',
+        type: 'three_pin_plug',
+        title: '3-Pin Plug and Socket Wiring',
+        caption: 'Earth pin is thicker & longer • Connects first for safety',
+        snippet: '\n@diagram three_pin_plug | 3-Pin Plug and Socket Wiring | Earth pin is thicker & longer • Connects first for safety\n'
+      }
+    ]
+  },
+  {
+    category: 'Organic Chemistry',
+    items: [
+      {
+        label: 'Tetrahedral Carbon (CH₄)',
+        type: 'carbon_tetrahedron',
+        title: 'Tetrahedral Carbon (Methane, CH₄)',
+        caption: 'sp³ hybridization • 4 equivalent bonds at 109°28′ (109.5°)',
+        snippet: '\n@diagram carbon_tetrahedron | Tetrahedral Carbon (Methane, CH₄) | sp³ hybridization • 4 equivalent bonds at 109°28′ (109.5°)\n'
+      },
+      {
+        label: 'Chain Isomerism of Butane',
+        type: 'isomerism_butane',
+        title: 'Chain Isomerism of Butane (C₄H₁₀)',
+        caption: 'n-Butane (b.p. −0.5°C) vs Isobutane (b.p. −11.7°C)',
+        snippet: '\n@diagram isomerism_butane | Chain Isomerism of Butane (C₄H₁₀) | n-Butane (b.p. −0.5°C) vs Isobutane (b.p. −11.7°C)\n'
+      },
+      {
+        label: 'Key Functional Groups Chart',
+        type: 'functional_groups',
+        title: 'Key Organic Functional Groups',
+        caption: 'Alcohol (−OH) • Aldehyde (−CHO) • Ketone (>C=O) • Acid (−COOH)',
+        snippet: '\n@diagram functional_groups | Key Organic Functional Groups | Alcohol (−OH) • Aldehyde (−CHO) • Ketone (>C=O) • Acid (−COOH)\n'
+      },
+      {
+        label: 'Ethanol (Ethyl Alcohol)',
+        type: 'ethanol_structure',
+        title: 'Ethanol (Ethyl Alcohol) • C₂H₅OH',
+        caption: 'Functional group: Hydroxyl (−OH) • Gives H₂ with Sodium',
+        snippet: '\n@diagram ethanol_structure | Ethanol (Ethyl Alcohol) • C₂H₅OH | Functional group: Hydroxyl (−OH) • Gives H₂ with Sodium\n'
+      },
+      {
+        label: 'Ethanoic Acid (Acetic Acid)',
+        type: 'ethanoic_acid_structure',
+        title: 'Ethanoic Acid (Acetic Acid) • CH₃COOH',
+        caption: 'Functional group: Carboxyl (−COOH) • Vinegar is 5–8% solution',
+        snippet: '\n@diagram ethanoic_acid_structure | Ethanoic Acid (Acetic Acid) • CH₃COOH | Functional group: Carboxyl (−COOH) • Vinegar is 5–8% solution\n'
+      },
+      {
+        label: 'Ethanal (Acetaldehyde)',
+        type: 'ethanal_structure',
+        title: 'Ethanal (Acetaldehyde) • CH₃CHO',
+        caption: "Functional group: Formyl (−CHO) • Reduces Tollens' reagent",
+        snippet: "\n@diagram ethanal_structure | Ethanal (Acetaldehyde) • CH₃CHO | Functional group: Formyl (−CHO) • Reduces Tollens' reagent\n"
+      },
+      {
+        label: 'Propanone (Acetone)',
+        type: 'propanone_structure',
+        title: 'Propanone (Acetone) • CH₃COCH₃',
+        caption: 'Functional group: Carbonyl (>C=O) • Volatile solvent',
+        snippet: '\n@diagram propanone_structure | Propanone (Acetone) • CH₃COCH₃ | Functional group: Carbonyl (>C=O) • Volatile solvent\n'
+      },
+      {
+        label: 'Alkane vs Alkene vs Alkyne',
+        type: 'hydrocarbon_types',
+        title: 'Hydrocarbons: Alkane, Alkene & Alkyne',
+        caption: 'Single (saturated), Double (unsaturated), Triple (unsaturated)',
+        snippet: '\n@diagram hydrocarbon_types | Hydrocarbons: Alkane, Alkene & Alkyne | Single (saturated), Double (unsaturated), Triple (unsaturated)\n'
+      },
+      {
+        label: 'Esterification Reaction',
+        type: 'esterification_reaction',
+        title: 'Esterification: Ethyl Acetate Formation',
+        caption: 'Acid + Alcohol (conc. H₂SO₄, Δ) → Ester (fruity smell) + H₂O',
+        snippet: '\n@diagram esterification_reaction | Esterification: Ethyl Acetate Formation | Acid + Alcohol (conc. H₂SO₄, Δ) → Ester (fruity smell) + H₂O\n'
+      },
+      {
+        label: 'Bromine Water Test (Unsaturation)',
+        type: 'bromine_test_ethene',
+        title: 'Bromine Water Test for Unsaturation',
+        caption: 'Ethene decolourizes Br₂ water • Ethane does not react in dark',
+        snippet: '\n@diagram bromine_test_ethene | Bromine Water Test for Unsaturation | Ethene decolourizes Br₂ water • Ethane does not react in dark\n'
+      },
+      {
+        label: 'Lab Prep of Methane',
+        type: 'lab_prep_methane',
+        title: 'Laboratory Preparation of Methane (CH₄)',
+        caption: 'Sodium acetate + Soda lime (CaO + NaOH) • Collected over water',
+        snippet: '\n@diagram lab_prep_methane | Laboratory Preparation of Methane (CH₄) | Sodium acetate + Soda lime (CaO + NaOH) • Collected over water\n'
+      },
+      {
+        label: 'Lab Prep of Acetylene',
+        type: 'lab_prep_acetylene',
+        title: 'Laboratory Preparation of Acetylene (C₂H₂)',
+        caption: 'Calcium carbide (CaC₂) + Water → Acetylene gas over water',
+        snippet: '\n@diagram lab_prep_acetylene | Laboratory Preparation of Acetylene (C₂H₂) | Calcium carbide (CaC₂) + Water → Acetylene gas over water\n'
+      },
+      {
+        label: 'Hydrogenation of Ethene',
+        type: 'ethene_hydrogenation',
+        title: 'Catalytic Hydrogenation of Ethene',
+        caption: 'H₂C=CH₂ + H₂ (Ni, 200°C) → H₃C–CH₃ (Vanaspati ghee)',
+        snippet: '\n@diagram ethene_hydrogenation | Catalytic Hydrogenation of Ethene | H₂C=CH₂ + H₂ (Ni, 200°C) → H₃C–CH₃ (Vanaspati ghee)\n'
+      }
+    ]
   }
 ];
 

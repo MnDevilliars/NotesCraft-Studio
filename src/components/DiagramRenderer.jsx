@@ -6,11 +6,15 @@ import {
   renderCovalentDash,
   renderElectrolysis,
 } from './ChemistryDiagrams';
+import { renderElectricityDiagram } from './ElectricityDiagrams';
+import { renderOrganicDiagram } from './OrganicChemistryDiagrams';
 
 /**
  * Normalizes user-specified diagram type strings into canonical diagram types and variants.
  * Handles forms like:
  * - concave_mirror_beyond_c
+ * - circuit_ohms_law, resistors_series, resistors_parallel, solenoid_field
+ * - carbon_tetrahedron, isomerism_butane, ethanol_structure, esterification_reaction
  * - ionic_NaCl
  * - covalent_h2o_dot
  * - covalent_ch4_dash
@@ -57,10 +61,148 @@ export function normalizeDiagramType(rawType = '') {
     return { category: 'electrolysis', variant: 'water' };
   }
 
+  // D) Current Electricity types
   const clean = rawLower
     .replace(/[:|]/g, ' ')
     .replace(/[-_]/g, ' ')
     .replace(/\s+/g, ' ');
+
+  // 1. Ohm's Law Circuit
+  if (clean.includes('ohm') || clean.includes('verification')) {
+    return { category: 'electricity', variant: 'circuit_ohms_law' };
+  }
+
+  // 2. Resistors in Series
+  if (clean.includes('series') && (clean.includes('resistor') || clean.includes('resistance') || clean.includes('combination') || clean.includes('circuit'))) {
+    return { category: 'electricity', variant: 'resistors_series' };
+  }
+  if (rawLower === 'resistors_series' || rawLower === 'series_combination' || rawLower === 'resistor_series') {
+    return { category: 'electricity', variant: 'resistors_series' };
+  }
+
+  // 3. Resistors in Parallel
+  if (clean.includes('parallel') && (clean.includes('resistor') || clean.includes('resistance') || clean.includes('combination') || clean.includes('circuit'))) {
+    return { category: 'electricity', variant: 'resistors_parallel' };
+  }
+  if (rawLower === 'resistors_parallel' || rawLower === 'parallel_combination' || rawLower === 'resistor_parallel') {
+    return { category: 'electricity', variant: 'resistors_parallel' };
+  }
+
+  // 4. Right-Hand Thumb Rule / Straight Conductor
+  if (clean.includes('thumb') || clean.includes('corkscrew') || (clean.includes('straight') && clean.includes('conductor'))) {
+    return { category: 'electricity', variant: 'right_hand_thumb_rule' };
+  }
+
+  // 5. Circular Loop Field
+  if (clean.includes('circular') && (clean.includes('loop') || clean.includes('coil') || clean.includes('field'))) {
+    return { category: 'electricity', variant: 'circular_loop_field' };
+  }
+
+  // 6. Solenoid
+  if (clean.includes('solenoid')) {
+    return { category: 'electricity', variant: 'solenoid_field' };
+  }
+
+  // 7. Fleming's Left-Hand Rule
+  if ((clean.includes('left') && clean.includes('hand')) || clean.includes('motor rule') || clean.includes('fbi')) {
+    return { category: 'electricity', variant: 'flemings_left_hand_rule' };
+  }
+
+  // 8. Electric Motor
+  if (clean.includes('motor') || clean.includes('armature') || clean.includes('commutator')) {
+    return { category: 'electricity', variant: 'electric_motor' };
+  }
+
+  // 9. Electromagnetic Induction / Faraday
+  if (clean.includes('induction') || clean.includes('faraday') || clean.includes('galvanometer')) {
+    return { category: 'electricity', variant: 'electromagnetic_induction' };
+  }
+
+  // 10. Domestic Circuit / Household Wiring
+  if (clean.includes('domestic') || clean.includes('household')) {
+    return { category: 'electricity', variant: 'domestic_circuit' };
+  }
+
+  // 11. 3-Pin Plug and Socket
+  if (clean.includes('plug') || clean.includes('socket') || clean.includes('three pin') || clean.includes('3 pin')) {
+    return { category: 'electricity', variant: 'three_pin_plug' };
+  }
+
+  // E) Organic Chemistry types
+  // 1. Tetrahedral Carbon / Methane
+  if (clean.includes('tetrahedr') || clean.includes('sp3') || (clean.includes('carbon') && clean.includes('geometry'))) {
+    return { category: 'organic', variant: 'carbon_tetrahedron' };
+  }
+
+  // 2. Butane Isomerism
+  if (clean.includes('butane') || clean.includes('isobutane') || (clean.includes('isomer') && !clean.includes('alcohol'))) {
+    return { category: 'organic', variant: 'isomerism_butane' };
+  }
+
+  // 3. Functional Groups Chart
+  if (clean.includes('functional') || clean.includes('groups chart') || clean.includes('organic groups')) {
+    return { category: 'organic', variant: 'functional_groups' };
+  }
+
+  // 4. Ethanol Structure
+  if (clean.includes('ethanol') || clean.includes('ethyl alcohol')) {
+    return { category: 'organic', variant: 'ethanol_structure' };
+  }
+
+  // 5. Ethanoic Acid / Acetic Acid
+  if (clean.includes('ethanoic') || clean.includes('acetic') || clean.includes('vinegar')) {
+    return { category: 'organic', variant: 'ethanoic_acid_structure' };
+  }
+
+  // 6. Ethanal / Acetaldehyde
+  if (clean.includes('ethanal') || clean.includes('acetaldehyde')) {
+    return { category: 'organic', variant: 'ethanal_structure' };
+  }
+
+  // 7. Propanone / Acetone
+  if (clean.includes('propanone') || clean.includes('acetone')) {
+    return { category: 'organic', variant: 'propanone_structure' };
+  }
+
+  // 8. Hydrocarbon Types (Single, Double, Triple)
+  if (clean.includes('hydrocarbon') || clean.includes('alkane alkene') || clean.includes('unsaturation types')) {
+    return { category: 'organic', variant: 'hydrocarbon_types' };
+  }
+
+  // 9. Esterification Reaction
+  if (clean.includes('ester') || clean.includes('ethyl acetate')) {
+    return { category: 'organic', variant: 'esterification_reaction' };
+  }
+
+  // 10. Bromine Water Test for Unsaturation
+  if (clean.includes('bromine') || clean.includes('unsaturation test')) {
+    return { category: 'organic', variant: 'bromine_test_ethene' };
+  }
+
+  // 11. Lab Prep Methane
+  if (clean.includes('prep') && clean.includes('methane')) {
+    return { category: 'organic', variant: 'lab_prep_methane' };
+  }
+
+  // 12. Lab Prep Acetylene / Ethyne
+  if (clean.includes('prep') && (clean.includes('acetylene') || clean.includes('ethyne') || clean.includes('carbide'))) {
+    return { category: 'organic', variant: 'lab_prep_acetylene' };
+  }
+
+  // 13. Catalytic Hydrogenation
+  if (clean.includes('hydrogenation')) {
+    return { category: 'organic', variant: 'ethene_hydrogenation' };
+  }
+
+  // Direct prefix fallback
+  if (rawLower.startsWith('electricity_') || rawLower.startsWith('circuit_')) {
+    const v = rawLower.replace(/^(electricity|circuit)[_\s]+/, '');
+    return { category: 'electricity', variant: v };
+  }
+  if (rawLower.startsWith('organic_')) {
+    const v = rawLower.replace(/^organic[_\s]+/, '');
+    return { category: 'organic', variant: v };
+  }
 
   // 1. Concave Mirror
   if (clean.includes('concave') && clean.includes('mirror')) {
@@ -254,8 +396,43 @@ export default function DiagramRenderer({ diagram, index = 0, singleDiagram = fa
     copper_refining: 'Electro-refining of Copper',
   };
 
+  const electricityTitles = {
+    circuit_ohms_law: "Ohm's Law Verification Circuit",
+    ohms_law: "Ohm's Law Verification Circuit",
+    resistors_series: 'Resistors in Series (R₁ + R₂ + R₃)',
+    resistors_parallel: 'Resistors in Parallel (1/R_p = 1/R₁ + 1/R₂ + 1/R₃)',
+    right_hand_thumb_rule: 'Right-Hand Thumb Rule',
+    circular_loop_field: 'Magnetic Field of a Circular Coil',
+    solenoid_field: 'Magnetic Field of a Solenoid',
+    flemings_left_hand_rule: "Fleming's Left-Hand Rule (Motor Rule)",
+    electric_motor: 'Electric Motor (DC Motor Principle)',
+    electromagnetic_induction: 'Electromagnetic Induction (Faraday)',
+    domestic_circuit: 'Domestic AC Electric Circuit',
+    three_pin_plug: '3-Pin Plug and Socket Wiring',
+  };
+
+  const organicTitles = {
+    carbon_tetrahedron: 'Tetrahedral Carbon (Methane, CH₄)',
+    isomerism_butane: 'Chain Isomerism of Butane (C₄H₁₀)',
+    functional_groups: 'Key Organic Functional Groups',
+    ethanol_structure: 'Ethanol (Ethyl Alcohol) • C₂H₅OH',
+    ethanoic_acid_structure: 'Ethanoic Acid (Acetic Acid) • CH₃COOH',
+    ethanal_structure: 'Ethanal (Acetaldehyde) • CH₃CHO',
+    propanone_structure: 'Propanone (Acetone) • CH₃COCH₃',
+    hydrocarbon_types: 'Hydrocarbons: Alkane, Alkene & Alkyne',
+    esterification_reaction: 'Esterification: Ethyl Acetate Formation',
+    bromine_test_ethene: 'Bromine Water Test for Unsaturation',
+    lab_prep_methane: 'Laboratory Preparation of Methane (CH₄)',
+    lab_prep_acetylene: 'Laboratory Preparation of Acetylene (C₂H₂)',
+    ethene_hydrogenation: 'Catalytic Hydrogenation of Ethene',
+  };
+
   if (!displayTitle) {
-    if (category === 'ionic_bond') {
+    if (category === 'electricity') {
+      displayTitle = electricityTitles[variant] || "Current Electricity Diagram";
+    } else if (category === 'organic') {
+      displayTitle = organicTitles[variant] || "Organic Chemistry Diagram";
+    } else if (category === 'ionic_bond') {
       displayTitle = ionicTitles[variant] || 'Ionic Bond Formation';
     } else if (category === 'covalent_dot') {
       const formula = covalentFormulas[variant] || variant.toUpperCase();
@@ -297,7 +474,40 @@ export default function DiagramRenderer({ diagram, index = 0, singleDiagram = fa
   }
 
   if (!displayCaption) {
-    if (category === 'ionic_bond') {
+    if (category === 'electricity') {
+      const electricityCaptions = {
+        circuit_ohms_law: 'Ammeter in series • Voltmeter in parallel across R',
+        ohms_law: 'Ammeter in series • Voltmeter in parallel across R',
+        resistors_series: 'Same current I through all • V = V₁ + V₂ + V₃',
+        resistors_parallel: 'Same potential V across all • I = I₁ + I₂ + I₃',
+        right_hand_thumb_rule: 'Thumb = Current (I) • Curled fingers = Field (B)',
+        circular_loop_field: 'Straight at centre • Clockwise = S, Anticlockwise = N',
+        solenoid_field: 'Uniform parallel field inside • Acts like a bar magnet',
+        flemings_left_hand_rule: 'Thumb = Force (F) • Forefinger = Field (B) • Middle = Current (I)',
+        electric_motor: 'Split-ring commutator reverses current every half rotation',
+        electromagnetic_induction: 'Relative motion induces EMF • Deflection in Galvanometer',
+        domestic_circuit: 'Appliances in parallel • Switch & Fuse always in Live wire!',
+        three_pin_plug: 'Earth pin is thicker & longer • Connects first for safety',
+      };
+      displayCaption = electricityCaptions[variant] || 'Current Electricity circuit diagram';
+    } else if (category === 'organic') {
+      const organicCaptions = {
+        carbon_tetrahedron: 'sp³ hybridization • 4 equivalent bonds at 109°28′ (109.5°)',
+        isomerism_butane: 'n-Butane (b.p. −0.5°C) vs Isobutane (b.p. −11.7°C)',
+        functional_groups: 'Alcohol (−OH) • Aldehyde (−CHO) • Ketone (>C=O) • Acid (−COOH)',
+        ethanol_structure: 'Functional group: Hydroxyl (−OH) • Gives H₂ with Sodium',
+        ethanoic_acid_structure: 'Functional group: Carboxyl (−COOH) • Vinegar is 5–8% solution',
+        ethanal_structure: "Functional group: Formyl (−CHO) • Reduces Tollens' reagent",
+        propanone_structure: 'Functional group: Carbonyl (>C=O) • Volatile solvent',
+        hydrocarbon_types: 'Single (saturated), Double (unsaturated), Triple (unsaturated)',
+        esterification_reaction: 'Acid + Alcohol (conc. H₂SO₄, Δ) → Ester (fruity smell) + H₂O',
+        bromine_test_ethene: 'Ethene decolourizes Br₂ water • Ethane does not react in dark',
+        lab_prep_methane: 'Sodium acetate + Soda lime (CaO + NaOH) • Collected over water',
+        lab_prep_acetylene: 'Calcium carbide (CaC₂) + Water → Acetylene gas over water',
+        ethene_hydrogenation: 'H₂C=CH₂ + H₂ (Ni, 200°C) → H₃C–CH₃ (Vanaspati ghee)',
+      };
+      displayCaption = organicCaptions[variant] || 'Organic Chemistry diagram';
+    } else if (category === 'ionic_bond') {
       displayCaption = 'Electron-transfer diagram';
     } else if (category === 'covalent_dot') {
       displayCaption = 'Shared pairs & full octet completion';
@@ -342,11 +552,13 @@ export default function DiagramRenderer({ diagram, index = 0, singleDiagram = fa
     }
   }
 
-  const isChemistryDiagram =
+  const isWideDiagram =
     category === 'ionic_bond' ||
     category === 'covalent_dot' ||
     category === 'covalent_dash' ||
-    category === 'electrolysis';
+    category === 'electrolysis' ||
+    category === 'electricity' ||
+    category === 'organic';
 
   return (
     <div className={`hand-graph-card hand-diagram-card ${singleDiagram ? 'single-graph-card' : ''}`}>
@@ -367,7 +579,7 @@ export default function DiagramRenderer({ diagram, index = 0, singleDiagram = fa
         <svg
           width="100%"
           height="160"
-          viewBox={isChemistryDiagram ? "0 0 260 160" : "0 0 250 160"}
+          viewBox={isWideDiagram ? "0 0 260 160" : "0 0 250 160"}
           className="hand-svg"
           preserveAspectRatio="xMidYMid meet"
           style={{ width: '100%', height: '160px', display: 'block' }}
@@ -404,6 +616,12 @@ export default function DiagramRenderer({ diagram, index = 0, singleDiagram = fa
 
           {/* 11. ELECTROLYSIS */}
           {category === 'electrolysis' && renderElectrolysis(variant, diagram.overrides)}
+
+          {/* 12. CURRENT ELECTRICITY */}
+          {category === 'electricity' && renderElectricityDiagram(variant)}
+
+          {/* 13. ORGANIC CHEMISTRY */}
+          {category === 'organic' && renderOrganicDiagram(variant)}
         </svg>
       </div>
     </div>
